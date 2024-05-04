@@ -41,7 +41,6 @@
     "noUnusedParameters": true,         // Report errors on unused parameters in functions
 
     "pretty": true,
-    "sourceMap": true,
     "declaration": true,
     "importHelpers": false,
     "downlevelIteration": true,

@@ -23,7 +23,7 @@
 
 <!-- header -->
 <header>
-    <link rel="html" href="./partials/nav.html" />
+    <link rel="html" href="./partials/_nav.html" />
 </header>
 <!-- / header -->
 
@@ -68,62 +68,20 @@
 
 <!-- footer -->
 <footer>
-    <link rel="html" href="/partials/footer.html" />
+    <link rel="html" href="/partials/_footer.html" />
 </footer>
 <!-- / footer -->
 
 
+
+<!-- debug -->
 <script>
-
-showInfo(event) {
-    const element = event.target;
-    const tag = element.tagName.toLowerCase();
-    const classes = Array.from(element.classList).join(', ');
-    const styles = window.getComputedStyle(element);
-
-    // Define the styles to exclude from the displayed information
-    const excludedStyles = [
-        'position',
-        'margin',
-        'padding',
-        'width',
-        'height',
-        'z-index'
-    ];
-
-    // Filter out excluded styles from the computed styles
-    const cleanedStyles = {};
-    for (const prop in styles) {
-        if (
-            styles.hasOwnProperty(prop) &&
-            styles[prop] &&
-            styles[prop] !== 'normal' &&
-            styles[prop] !== 'rgba(0, 0, 0, 0)' &&
-            !excludedStyles.includes(prop)
-        ) {
-            cleanedStyles[prop] = styles[prop];
-        }
-    }
-
-    // Construct the element information string
-    const info = `
-        <strong>${tag}</strong> <br>
-        Classes: ${classes} <br>
-        Styles: ${JSON.stringify(cleanedStyles)}
-    `;
-
-    // Display the element information
-    this.infoBox.innerHTML = info;
-
-    // Highlight the hovered div with magenta 1px border and 0.5 opacity
-    if (element.tagName.toLowerCase() === 'div') {
-        element.style.border = '1px solid rgba(255, 0, 255, 0.5)';
-    }
-}
 
 
 
 </script>
+<!-- / debug -->
+
 
 
 </body>
