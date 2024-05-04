@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="./skin/favicon.svg" />
+    <link rel="mask-icon" href="./skin/favicon.svg" color="#000000" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
+
+    <link rel="stylesheet" href="/skin/defaults.css" />
+    <link rel="stylesheet" href="/skin/layout.css" />
+
+    <!-- app js -->
+    <script type="module" src="./rsrc/app/app.js"></script>
+</head>
+<body>
+
+
+
+<!-- header -->
+<header>
+    <link rel="html" href="./partials/nav.html" />
+</header>
+<!-- / header -->
+
+
+
+<!-- logo -->
+<div id="logoholder">
+    <object id="logo" type="image/svg+xml" data="/skin/logo.svg">
+        <!--<img src="./skin/logo.png" alt="" />-->
+    </object>
+</div>
+<!-- / logo -->
+
+
+
+<!-- main -->
+<main>
+    <div class="cover">
+        <style>
+            .cover {
+                width: 100%;
+                height: 90vh;
+                background: url( './skin/selection-marching-ants.svg');
+                background-size: contain;
+            }
+        </style>
+    </div>
+    <link rel="manualhtml" id="elementId" href="/partials/one.html" />
+    <link rel="html" id="elementId2" href="/partials/two.html" />
+    <link rel="html" id="elementId3" href="/partials/three.html" />
+    <link rel="html" href="/partials/partial-3.html" />
+    <link rel="html" href="/partials/partial.html" />
+    <link rel="html" href="/partials/partial-2.html" />
+    <link rel="html" href="/partials/partial-3.html" />
+    <link rel="html" href="/partials/partial-2.html" />
+    <link rel="html" href="/partials/partial.html" />
+    
+</main>
+<!-- / main -->
+
+
+
+<!-- footer -->
+<footer>
+    <link rel="html" href="/partials/footer.html" />
+</footer>
+<!-- / footer -->
+
+
+<script>
+
+showInfo(event) {
+    const element = event.target;
+    const tag = element.tagName.toLowerCase();
+    const classes = Array.from(element.classList).join(', ');
+    const styles = window.getComputedStyle(element);
+
+    // Define the styles to exclude from the displayed information
+    const excludedStyles = [
+        'position',
+        'margin',
+        'padding',
+        'width',
+        'height',
+        'z-index'
+    ];
+
+    // Filter out excluded styles from the computed styles
+    const cleanedStyles = {};
+    for (const prop in styles) {
+        if (
+            styles.hasOwnProperty(prop) &&
+            styles[prop] &&
+            styles[prop] !== 'normal' &&
+            styles[prop] !== 'rgba(0, 0, 0, 0)' &&
+            !excludedStyles.includes(prop)
+        ) {
+            cleanedStyles[prop] = styles[prop];
+        }
+    }
+
+    // Construct the element information string
+    const info = `
+        <strong>${tag}</strong> <br>
+        Classes: ${classes} <br>
+        Styles: ${JSON.stringify(cleanedStyles)}
+    `;
+
+    // Display the element information
+    this.infoBox.innerHTML = info;
+
+    // Highlight the hovered div with magenta 1px border and 0.5 opacity
+    if (element.tagName.toLowerCase() === 'div') {
+        element.style.border = '1px solid rgba(255, 0, 255, 0.5)';
+    }
+}
+
+
+
+</script>
+
+
+</body>
+</html>

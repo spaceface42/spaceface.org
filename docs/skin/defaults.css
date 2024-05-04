@@ -1,0 +1,48 @@
+/**
+ * Reset
+ */
+*,
+*::before,
+*::after{
+  margin:0;
+  padding:0;
+  box-sizing: inherit;
+}
+ 
+ 
+ 
+ /**
+  * Defaults
+  */
+ /**
+  * Enable smooth scrolling on the whole document
+  * and Disable smooth scrolling when users have prefers-reduced-motion enabled
+  */
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  box-sizing: border-box;
+}
+ 
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+ 
+/* responsive images */
+img {
+  font-style: italic;
+  display: block;
+  background: no-repeat;
+  background-size: cover; /* for lazy loading / the low res pic placeholder */
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+}

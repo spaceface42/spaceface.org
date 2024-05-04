@@ -1,0 +1,219 @@
+/*
+
+
+---------------------------------
+|      |       |                |
+|   h  |   l   |       c        |
+|   e  |   o   |       o        |
+|   a  |   g   |       n        |
+|   d  |   o   |       t        |
+|   e  |       |       e        |
+|   r  |       |       n        |
+|      |       |       t        |
+|      |       |                |
+|      |       |                |
+---------------------------------
+|                               |
+|            footer             |
+|                               |
+---------------------------------
+
+
+*/
+
+
+/**
+ * Layout
+ */
+body {
+  background-color: #e1dfdd;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
+_:hover {
+  border: 1px solid;
+
+}
+
+main {
+  width: 65vw;
+  flex-grow: 2;
+}
+
+header {
+  padding: 3rem;
+  width: max-content;
+  display: flex;
+}
+
+
+
+nav {
+  top: 90px;
+  position: -webkit-sticky;
+  position: sticky;
+  align-self: flex-start; /* fix when using flex and sticky together */
+  
+}
+
+footer {
+  padding: 100px;
+  background-color: rgba(71, 61, 139, 0.5);
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+
+
+#logo {
+  width: 160px;
+  height: 160px;
+}
+
+#logoholder {
+  opacity: 0.9;
+  filter: invert(12);
+  mix-blend-mode: difference;
+  z-index: 1222;
+
+  width: max-content;
+  min-height: 100vh;
+
+  display: flex;
+  align-self: flex-start;
+  /* justify-content: center; */
+  
+
+
+  top: 290px;
+  position: -webkit-sticky;
+  position: sticky;
+
+  background-color: aquamarine;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/**
+ * classes
+ */
+a:not([class]) {
+  color: rgb(84, 95, 105);
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  border-radius: 99rem;
+  margin: 1rem;
+  display: block;
+}
+
+.shadow {
+  box-shadow: rgba(98, 81, 81, 0.2) 0px 18px 50px -10px;
+  box-shadow: rgba(56, 48, 101, 0.15) 0px 48px 100px 0px;
+}
+
+
+
+article {
+  display: flex;
+  /* flex-direction: column;
+	   flex-wrap: nowrap; */
+  flex-flow: column wrap;
+	align-items: center;
+}
+
+/* first three */
+article:nth-child(-n + 3) {
+  align-items: flex-start;
+}
+
+/* odd */
+article:nth-child(-2n+1) {
+  align-items: flex-start;
+}
+
+/* even */
+article:nth-child(2n) {
+  align-items: flex-end;
+}
+
+article:nth-child(4n) {
+  align-items: center;
+}
+
+/* only */
+article:nth-child(7) {
+  align-items: flex-end;
+}
+
+
+
+
+
+
+
+pre {
+  opacity: 0.5;
+  padding: 3rem;
+  background-color: transparent;
+  border-radius: 25px;
+
+  filter: blur(5px); /* Initial blur effect */
+  opacity: 0; /* Initial opacity for blur effect */
+  transition: all 0.5s ease-in; /* Smooth transition */
+}
+
+.visible pre {
+  filter: blur(0px); /* Remove blur effect when in viewport */
+  opacity: 1; /* Full opacity when in viewport */
+}
+  
+
+img {
+  border-radius: 88rem;
+  box-shadow: rgba(98, 81, 81, 0.2) 0px 18px 50px -10px;
+  box-shadow: rgba(56, 48, 101, 0.15) 0px 48px 100px 0px;
+  filter: grayscale(1);
+  transition: all .5s ease-in;
+}
+
+img:hover {
+  opacity: 1;
+  filter: grayscale(0);
+  transition: all .5s ease-in;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Utils
+ */
+
+
+
+
+
+
+
+
+
