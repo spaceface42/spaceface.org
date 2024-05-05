@@ -21,6 +21,7 @@
 
 */
 
+
 /*
  *
  */
@@ -187,14 +188,36 @@ pre {
 
   filter: blur(5px); /* Initial blur effect */
   opacity: 0; /* Initial opacity for blur effect */
-  transition: all 0.5s ease-in; /* Smooth transition */
+  transition: all 0.5s ease-in-out;; /* Smooth transition */
+
+
+  /**/
+  transform: translateY(1500px); /* Start position outside viewport */
+  transition: all 0.5s ease-in-out;; /* Smooth transition */
 }
+
 
 .visible pre {
   filter: blur(0px); /* Remove blur effect when in viewport */
   opacity: 1; /* Full opacity when in viewport */
+
+
+  /**/
+  transform: translateY(0px); /* Adjust the Y-translation as needed */
 }
   
+
+
+
+
+
+
+
+
+
+
+
+
 
 img {
   border-radius: 88rem;

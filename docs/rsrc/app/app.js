@@ -30,8 +30,8 @@ promiseDom.ready.then(() => {
 function startup() {
     const options = {
         root: null,
-        threshold: 0.30,
-        rootMargin: "-30% 0% -30% 0%"
+        threshold: 0,
+        rootMargin: "0px"
     };
     // Define the IntersectionObserver before using it
     const observer = new IntersectionObserver((entries) => {
@@ -57,6 +57,7 @@ function startup() {
             if (entry.isIntersecting && entry.target) {
                 // Add 'visible' class when code tag is in viewport
                 entry.target.classList.add('visible');
+
                 console.info('Element with class "partial" is now visible:');
                 console.log(entry);
                 console.log(entry.target);
