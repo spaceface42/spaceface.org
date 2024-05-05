@@ -21,6 +21,15 @@
 
 */
 
+/*
+ *
+ */
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
 
 /**
  * Layout
@@ -32,15 +41,13 @@ body {
   gap: 1rem;
 }
 
-_:hover {
-  border: 1px solid;
-
-}
-
 main {
   width: 65vw;
   flex-grow: 2;
 }
+
+
+
 
 header {
   padding: 3rem;
@@ -48,15 +55,24 @@ header {
   display: flex;
 }
 
-
-
 nav {
   top: 90px;
   position: -webkit-sticky;
   position: sticky;
   align-self: flex-start; /* fix when using flex and sticky together */
-  
 }
+
+nav a {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  text-transform: uppercase;
+}
+
+
+
+
+
 
 footer {
   padding: 100px;

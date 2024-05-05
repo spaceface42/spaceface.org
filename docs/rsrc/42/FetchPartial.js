@@ -69,12 +69,19 @@ class FetchPartial {
             throw error;
         }
     }
+
+
+
+
+
+
+
     /**
      * Processes the fetched response and updates the provided element with the response HTML.
      * @param response The response HTML.
      * @param element The element to update with the response HTML.
      */
-    async processRequest(response, element) {
+    async processRequestO(response, element) {
         var _a;
         try {
             const template = document.createElement('template');
@@ -92,6 +99,78 @@ class FetchPartial {
             throw error;
         }
     }
+
+
+
+
+
+    /**
+     * Processes the fetched response and updates the provided element with the response HTML.
+     * @param response The response HTML.
+     * @param element The element to update with the response HTML.
+     */
+    async processRequest(response, element) {
+        try {
+            const template = document.createElement('template');
+            template.innerHTML = response.trim();
+            const htmlPartial = template.content;
+            if (htmlPartial) {
+                const parentElement = element.parentNode;
+                if (parentElement) {
+                    parentElement.replaceChild(htmlPartial, element);
+                }
+            } else {
+                console.error('Fetched content is empty');
+            }
+        } catch (error) {
+            console.error('Error processing response:', error);
+            throw error;
+        }
+    }
+    
+
+
+    async processRequestOOO(response, element) {
+        try {
+            const template = document.createElement('template');
+            template.innerHTML = response.trim();
+            
+            // Find the <partial> element within the template
+            const partialElement = template.content.querySelector('partial');
+            
+            if (partialElement) {
+                // Extract its child nodes
+                const childNodes = partialElement.childNodes;
+                
+                // Create a document fragment to hold the child nodes
+                const fragment = document.createDocumentFragment();
+                
+                // Append each child node to the fragment
+                childNodes.forEach(node => {
+                    fragment.appendChild(node.cloneNode(true)); // Clone the nodes to avoid moving them from the template
+                });
+                
+                // Replace the original element with the fragment
+                element.parentNode.replaceChild(fragment, element);
+            } else {
+                console.error('No <partial> element found in fetched content');
+            }
+        }
+        catch (error) {
+            console.error('Error processing response:', error);
+            throw error;
+        }
+    }
+
+    
+
+
+
+
+
+
+
+
     /**
      * Fetches partial HTML content from the provided URL and updates the provided element with the response.
      * @param url The URL of the partial HTML content.
