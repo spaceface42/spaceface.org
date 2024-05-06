@@ -77,37 +77,13 @@ class FetchPartial {
      * @param response The response HTML.
      * @param element The element to update with the response HTML.
      */
-    async processRequestObsolete(response: string, element: Element): Promise<void> {
+    async processRequest(response: string, element: Element): Promise<void> {
         try {
             const template = document.createElement('template');
             template.innerHTML = response.trim();
-            const firstChild = template.content.firstChild;
-            if (firstChild) {
-                element.parentNode?.replaceChild(firstChild, element);
-            } else {
-                console.error('Fetched content is empty');
-            }
-        } catch (error) {
-            console.error('Error processing response:', error);
-            throw error;
-        }
-    }
-
-    /**
-     * Processes the fetched response and updates the provided element with the response HTML.
-     * @param response The response HTML.
-     * @param element The element to update with the response HTML.
-     */
-    async processRequest(response: string, element: HTMLElement): Promise<void> {
-        try {
-            const template = document.createElement('template');
-            template.innerHTML = response.trim();
-            const htmlPartial = template.content;
+            const htmlPartial = template.content.cloneNode(true) as DocumentFragment;
             if (htmlPartial) {
-                const parentElement = element.parentNode;
-                if (parentElement) {
-                    parentElement.replaceChild(htmlPartial, element);
-                }
+                element.replaceWith(htmlPartial);
             } else {
                 console.error('Fetched content is empty');
             }

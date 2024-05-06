@@ -1,6 +1,5 @@
 /*
 
-
 ---------------------------------
 |      |       |                |
 |   h  |   l   |       c        |
@@ -18,9 +17,7 @@
 |                               |
 ---------------------------------
 
-
 */
-
 
 /*
  *
@@ -39,26 +36,24 @@ body {
   background-color: #e1dfdd;
   display: flex;
   flex-flow: row wrap;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 main {
   width: 65vw;
   flex-grow: 2;
+  margin: 0 0 0 -90px;
 }
-
-
-
 
 header {
   padding: 3rem;
-  width: max-content;
+  /* width: max-content; */
   display: flex;
+  flex-direction: column;
 }
 
 nav {
-  top: 90px;
-  position: -webkit-sticky;
+  top: 50vh;
   position: sticky;
   align-self: flex-start; /* fix when using flex and sticky together */
 }
@@ -72,12 +67,27 @@ nav a {
 
 
 
+/**
+ * classes
+ */
+ a:not([class]) {
+  color: rgb(84, 95, 105);
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  border-radius: 99rem;
+  margin: 1rem;
+  display: block;
+}
 
+.contact a {
+  color: black;
+  background-color: tomato;
+}
 
 
 footer {
   padding: 100px;
-  background-color: rgba(71, 61, 139, 0.5);
+  background-color: rgba(42, 42, 42, 1);
   width: 100vw;
   min-height: 100vh;
   min-height: 100dvh;
@@ -86,8 +96,10 @@ footer {
 
 
 #logo {
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
+  z-index: 3000;
+  mix-blend-mode: difference;
 }
 
 #logoholder {
@@ -101,15 +113,16 @@ footer {
 
   display: flex;
   align-self: flex-start;
+ 
   /* justify-content: center; */
   
 
 
-  top: 290px;
+  top: 70vh;
   position: -webkit-sticky;
   position: sticky;
 
-  background-color: aquamarine;
+
 
 
 }
@@ -123,21 +136,11 @@ footer {
 
 
 
-/**
- * classes
- */
-a:not([class]) {
-  color: rgb(84, 95, 105);
-  background-color: rgb(255, 255, 255);
-  padding: 1rem;
-  border-radius: 99rem;
-  margin: 1rem;
-  display: block;
-}
+
 
 .shadow {
-  box-shadow: rgba(98, 81, 81, 0.2) 0px 18px 50px -10px;
-  box-shadow: rgba(56, 48, 101, 0.15) 0px 48px 100px 0px;
+  /* box-shadow: rgba(98, 81, 81, 0.2) 0px 18px 50px -10px;
+  box-shadow: rgba(56, 48, 101, 0.15) 0px 48px 100px 0px; */
 }
 
 
@@ -190,10 +193,11 @@ pre {
   opacity: 0; /* Initial opacity for blur effect */
   transition: all 0.5s ease-in-out;; /* Smooth transition */
 
-
-  /**/
-  transform: translateY(1500px); /* Start position outside viewport */
-  transition: all 0.5s ease-in-out;; /* Smooth transition */
+  /* Start position outside viewport */
+  /*
+  transform: translateY(1500px); 
+  transition: all 0.5s ease-in-out;
+  */
 }
 
 
@@ -201,9 +205,10 @@ pre {
   filter: blur(0px); /* Remove blur effect when in viewport */
   opacity: 1; /* Full opacity when in viewport */
 
-
-  /**/
-  transform: translateY(0px); /* Adjust the Y-translation as needed */
+   /* Adjust the Y-translation as needed */
+  /*
+  transform: translateY(0px);
+  */
 }
   
 
@@ -221,8 +226,8 @@ pre {
 
 img {
   border-radius: 88rem;
-  box-shadow: rgba(98, 81, 81, 0.2) 0px 18px 50px -10px;
-  box-shadow: rgba(56, 48, 101, 0.15) 0px 48px 100px 0px;
+  /* box-shadow: rgba(98, 81, 81, 0.2) 0px 18px 50px -10px;
+  box-shadow: rgba(56, 48, 101, 0.15) 0px 48px 100px 0px; */
   filter: grayscale(1);
   transition: all .5s ease-in;
 }
@@ -249,7 +254,34 @@ img:hover {
  */
 
 
+img.shadow-1 {
+  box-shadow:   1px 12px 1px -12px rgba(0,0,0,.07);
+}
 
+
+
+img.shadow-2 {
+  box-shadow: 10px 40px 90px -20px rgba(208, 12, 90, 0.2);
+}
+
+
+
+.shadow-3 {
+  box-shadow:   30px 30px 48px 22px rgba(0,0,0,.07);
+}
+
+.shadow-4 {
+  box-shadow:  -41px -51px -68px 50px rgba(0,0,0,.9);
+  
+}
+
+x:nth-child(4n+1){
+  box-shadow:   41px 51px 68px 5px rgba(0,0,0,.06);
+}
+
+x {
+  box-shadow: 30px 30px 50px -20px rgba(0,0,0,.07)
+}
 
 
 
