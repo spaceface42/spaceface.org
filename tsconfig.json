@@ -49,6 +49,6 @@
   },
   // "include": ["./**/*.ts"],
   "exclude": [
-    "public/*"
+    "docs/*"
   ]
 }
