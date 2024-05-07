@@ -25,6 +25,8 @@
 body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  font-feature-settings: "liga1" on;
 }
 
 
@@ -36,25 +38,41 @@ body {
   background-color: #e1dfdd;
   display: flex;
   flex-flow: row wrap;
+  /* align-items: stretch; */ /* default? */
+
   /* gap: 1rem; */
 }
 
 main {
   width: 65vw;
   flex-grow: 2;
+  background-color: rgba(240, 248, 255, 0.286);
 }
 
 header {
   padding: 3rem;
-  /* width: max-content; */
+  width: max-content;
   display: flex;
   flex-direction: column;
+  background-color: rgba(0, 255, 255, 0.172);
+
 }
 
 nav {
-  top: 50vh;
+  top: 5vh;
   position: sticky;
-  align-self: flex-start; /* fix when using flex and sticky together */
+  align-self: flex-start; /* fix when using flex and sticky together or align-items: stretch */
+  writing-mode: vertical-lr;
+  writing-mode: sideways-lr;
+  text-orientation: upright;
+  text-transform: full-width;
+
+
+  text-combine-upright: digits 2;
+
+  font-size: 0.75rem;
+  font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: bold;
 }
 
 nav a {
@@ -62,26 +80,32 @@ nav a {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
   text-transform: uppercase;
-}
 
-
-
-/**
- * classes
- */
- a:not([class]) {
   color: rgb(84, 95, 105);
-  background-color: rgb(255, 255, 255);
-  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1.6rem 0.6rem;
   border-radius: 99rem;
-  margin: 1rem;
+  margin: 0.6rem;
   display: inline-block;
+  text-decoration: none;
 }
 
 .contact a {
   color: black;
   background-color: tomato;
 }
+
+
+
+
+/**
+ * classes
+ */
+a:not([class]) {
+
+}
+
+
 
 footer {
   padding: 100px;
@@ -146,7 +170,9 @@ article {
   /* flex-direction: column;
 	   flex-wrap: nowrap; */
   flex-flow: column wrap;
-	align-items: center;
+	align-items: stretch;
+  border-bottom: 1px dashed white;
+
 }
 
 /* first three */
@@ -294,3 +320,10 @@ x {
   }
 }
 
+
+
+main {
+  scroll-padding-top: 300px;
+  inset: 100px 100px 100px 50px;
+  background-color: blueviolet;
+}
