@@ -27,6 +27,11 @@ body {
 	-moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   font-feature-settings: "liga1" on;
+  font-family: "ヒラギノ角ゴ Pro W3", 
+    "Hiragino Kaku Gothic Pro", 
+    Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", 
+    "MS PGothic", 
+    system-ui, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
@@ -62,16 +67,15 @@ nav {
   top: 5vh;
   position: sticky;
   align-self: flex-start; /* fix when using flex and sticky together or align-items: stretch */
+ 
   writing-mode: vertical-lr;
   writing-mode: sideways-lr;
   text-orientation: upright;
   text-transform: full-width;
 
-
   text-combine-upright: digits 2;
 
   font-size: 0.75rem;
-  font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-weight: bold;
 }
 
@@ -322,8 +326,3 @@ x {
 
 
 
-main {
-  scroll-padding-top: 300px;
-  inset: 100px 100px 100px 50px;
-  background-color: blueviolet;
-}
