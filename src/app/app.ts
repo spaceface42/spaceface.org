@@ -23,12 +23,14 @@ promiseDom.ready.then(() => {
     // Once the DOM is ready, perform fetch operations
 
     // Example usage of fetchOne
+    /*
     const linkElement = document.querySelector('link[rel="manualhtml"]');
-    if (linkElement && linkElement instanceof HTMLLinkElement) { // Check if linkElement is of type HTMLLinkElement
+    if (linkElement && linkElement instanceof HTMLLinkElement) {
         fetchPartial.fetchOne(undefined, linkElement)
             .then(() => console.log('FetchOne completed'))
             .catch(error => console.error('Error during fetching partial / fetchOne:', error));
     }
+    */
 
     // Example usage of fetchAll
     fetchPartial.fetchAll()

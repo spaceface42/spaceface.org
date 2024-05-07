@@ -25,13 +25,13 @@ html {
 body {
   box-sizing: border-box;
 }
- 
-@media screen and (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
- 
+
+
 /* responsive images */
 img {
   font-style: italic;
@@ -46,3 +46,20 @@ img {
 ul {
   list-style: none;
 }
+
+
+
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+ 
+
+
+
+
+
+
+

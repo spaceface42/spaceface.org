@@ -32,18 +32,39 @@
 <!-- logo -->
 <div id="logoholder">
     <object id="logo" type="image/svg+xml" data="./skin/sandorzsolt.svg">
-        <!--<img src="./skin/logo.png" alt="" />-->
+        <img src="./skin/sandorzsolt.png" alt="" />
     </object>
 </div>
 <!-- / logo -->
 
 
 
+<div class="absolute shadow">
+    <object id="logo3" type="image/svg+xml" data="./skin/sandorzsolt.svg">
+        <img src="./skin/sandorzsolt.png" alt="" />
+    </object>
+<style>
+    .absolute {
+        position: fixed;
+        width: 120px;
+        max-width: inherit;
+        height: 120px;
+        background-color: slateblue;
+
+        bottom: 5vh;
+        left:10vw;
+
+        z-index: 33;
+    }
+</style>
+</div>
+
+
+
 <!-- main -->
 <main>
+
     <div class="cover">
-            <!--<img src="./skin/logo.png" alt="" />-->
-        </object>
         <style>
             .cover {
                 width: 100%;
@@ -53,13 +74,35 @@
             }
         </style>
     </div>
+
     <link rel="html" href="./partials/todo.html" />
 
-
-    <link rel="manualhtml" id="elementId" href="./partials/one.html" />
-    <link rel="html" id="elementId2" href="./partials/two.html" />
-    <link rel="html" id="elementId3" href="./partials/three.html" />
+    <link rel="html" href="./partials/one.html" />
+    <link rel="html" href="./partials/two.html" />
+    <link rel="html" href="./partials/three.html" />
     <link rel="html" href="./partials/partial-3.html" />
+
+    <article class="partial whole">
+        <style>
+            .whole {
+                width: 100vw;
+                position: absolute;
+                left: 0px;
+                z-index: -3;
+
+                box-shadow: rgba(98, 81, 81, 0.2) 0px 18px 50px -10px;
+                box-shadow: rgba(197, 93, 23, 0.2) 0px 32px 100px 0px;
+
+            }
+        </style>
+        <pre>
+                <img src="./content/placeholder3.png" alt="" />
+        </pre>
+        
+        
+    </article>
+
+
     <link rel="html" href="./partials/partial.html" />
     <link rel="html" href="./partials/partial-2.html" />
     <link rel="html" href="./partials/partial-3.html" />
@@ -72,7 +115,7 @@
 
 
 <!-- footer -->
-<footer>
+<footer id="contact">
     <link rel="html" href="./partials/footer.html" />
 </footer>
 <!-- / footer -->

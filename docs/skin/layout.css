@@ -42,7 +42,6 @@ body {
 main {
   width: 65vw;
   flex-grow: 2;
-  margin: 0 0 0 -90px;
 }
 
 header {
@@ -76,7 +75,7 @@ nav a {
   padding: 1rem;
   border-radius: 99rem;
   margin: 1rem;
-  display: block;
+  display: inline-block;
 }
 
 .contact a {
@@ -84,13 +83,13 @@ nav a {
   background-color: tomato;
 }
 
-
 footer {
   padding: 100px;
   background-color: rgba(42, 42, 42, 1);
   width: 100vw;
   min-height: 100vh;
   min-height: 100dvh;
+  align-self: center;
 }
 
 
@@ -138,10 +137,7 @@ footer {
 
 
 
-.shadow {
-  /* box-shadow: rgba(98, 81, 81, 0.2) 0px 18px 50px -10px;
-  box-shadow: rgba(56, 48, 101, 0.15) 0px 48px 100px 0px; */
-}
+
 
 
 
@@ -286,5 +282,15 @@ x {
 
 
 
+@media (hover: hover) {
+  main {
+    
+  }
+}
 
+@media (hover: none) {
+  main {
+    background-color: darkkhaki;
+  }
+}
 
