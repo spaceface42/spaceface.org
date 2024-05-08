@@ -1,4 +1,4 @@
-* * * {
+main * {
     border: 1px dotted magenta;
 }
 
@@ -10,7 +10,7 @@ zzz::before {
 
 
 * {
-    border: 1px dotted  rgb(170, 203, 255);
+    border-inline: 1px dotted  rgb(170, 203, 255);
 }
 
 #btn_tags {
