@@ -1,7 +1,4 @@
 
-var styleSheet = document.createElement("style")
-styleSheet.innerText = styles
-document.head.appendChild(styleSheet)
 
 function toggle_tags() {
     document.body.classList.toggle("tags");
