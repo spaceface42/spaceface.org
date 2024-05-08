@@ -13,6 +13,17 @@ zzz::before {
     border: 1px dotted  rgb(170, 203, 255);
 }
 
+#btn_tags {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    z-index: 9999991;
+}
+
+
+
 .tags *::before, .tags *::after {
     background: #faa;
     border-radius: 3px;
