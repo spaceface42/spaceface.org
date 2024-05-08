@@ -9,9 +9,19 @@
     ],
     "settings": {
         "workspace.isHidden": false,
+        "emmet.preferences":{
+            "filter.commentAfter": "<!-- /[#ID][.CLASS] -->",
+        },
+        // Enable XHTML dialect for HTML syntax
         "emmet.syntaxProfiles": {
             "html": "xhtml"
+            "html" : {
+                "filters" :"html, c"
+            },
         },
+        "emmet.extensionsPath": [
+            "/Users/sandorzsolt/Desktop/__42/.vscode"
+        ],
         "html.format.endWithNewline": true,
         "html.trace.server": "verbose",
         "liveServer.settings.multiRootWorkspaceName": "spaceface.org",
