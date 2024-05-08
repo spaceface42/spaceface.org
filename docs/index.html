@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="icon" href="./skin/favicon.svg" />
-    <link rel="mask-icon" href="./skin/favicon.svg" color="#000000" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="manifest" href="./skin/manifest.json" />
+    <!--
+    <link rel="html" href="./partials/head.html" />
+    -->
 
     <link rel="stylesheet" href="./skin/defaults.css" />
     <link rel="stylesheet" href="./skin/layout.css" />
@@ -39,42 +37,23 @@
 
 
 
-<div class="absolute shadow">
-    <object id="logo3" type="image/svg+xml" data="./skin/sandorzsolt.svg">
-        <img src="./skin/sandorzsolt.png" alt="" />
-    </object>
-<style>
-    .absolute {
-        position: fixed;
-        width: 120px;
-        max-width: inherit;
-        height: 120px;
-        background-color: slateblue;
-
-        bottom: 5vh;
-        left:10vw;
-
-        z-index: 33;
-    }
-</style>
-</div>
+<!--
+<link rel="html" href="./partials/fixed-position.html" />
+-->
 
 
 
 <!-- main -->
 <main>
 
-    <div class="cover">
-        <style>
-            .cover {
-                width: 100%;
-                height: 90vh;
-                background: url( './skin/selection-marching-ants.svg');
-                background-size: contain;
-            }
-        </style>
-    </div>
 
+
+
+    <link rel="html" href="./partials/cover.html" />
+
+
+
+    
     <link rel="html" href="./partials/todo.html" />
 
     <link rel="html" href="./partials/one.html" />
@@ -82,25 +61,12 @@
     <link rel="html" href="./partials/three.html" />
     <link rel="html" href="./partials/partial-3.html" />
 
-    <article class="partial whole">
-        <style>
-            .whole {
-                width: 100vw;
-                position: absolute;
-                left: 0px;
-                z-index: -3;
 
-                box-shadow: rgba(98, 81, 81, 0.2) 0px 18px 50px -10px;
-                box-shadow: rgba(197, 93, 23, 0.2) 0px 32px 100px 0px;
 
-            }
-        </style>
-        <pre>
-                <img src="./content/placeholder3.png" alt="" />
-        </pre>
-        
-        
-    </article>
+    <!--
+    <link rel="html" href="./partials/partial-whole.html" />
+    -->
+
 
 
     <link rel="html" href="./partials/partial.html" />
