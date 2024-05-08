@@ -64,8 +64,6 @@ header {
   /* width: max-content; */
   display: flex;
   flex-direction: column;
-
-  background-color: aliceblue;
 }
 
 nav {
@@ -75,7 +73,6 @@ nav {
 main {
   width: 65vw;
   flex-grow: 2;
-  background-color: rgba(240, 248, 255, 0.286);
 }
 
 article {
@@ -111,7 +108,7 @@ ul, li {
 
 }
 
-nav a {
+header a {
   text-transform: uppercase;
 
   writing-mode: vertical-lr;
@@ -119,14 +116,14 @@ nav a {
   text-orientation: upright;
   text-transform: full-width;
 
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: bold;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
 
-nav a {
+header a {
   color: rgb(84, 95, 105);
   background-color: rgb(255, 255, 255);
   padding: 1.6rem 0.6rem;
