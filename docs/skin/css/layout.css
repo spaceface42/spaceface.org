@@ -61,7 +61,7 @@ body {
 
 header {
   padding: 3rem;
-  width: max-content;
+  /* width: max-content; */
   display: flex;
   flex-direction: column;
 }
@@ -97,24 +97,25 @@ nav {
   top: 5vh;
   position: sticky;
   align-self: flex-start; /* fix when using flex and sticky together or align-items: stretch */
- 
+}
+
+.jap {
+  text-transform: uppercase;
+
   writing-mode: vertical-lr;
   writing-mode: sideways-lr;
   text-orientation: upright;
   text-transform: full-width;
-
-  text-combine-upright: digits 2;
-
   font-size: 0.75rem;
   font-weight: bold;
-}
-
-nav a {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-  text-transform: uppercase;
+}
 
+
+
+header a {
   color: rgb(84, 95, 105);
   background-color: rgb(255, 255, 255);
   padding: 1.6rem 0.6rem;
