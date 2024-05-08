@@ -17,10 +17,10 @@
             "html": "xhtml"
             "html" : {
                 "filters" :"html, c"
-            },
+            }
         },
         "emmet.extensionsPath": [
-            "/Users/sandorzsolt/Desktop/__42/.vscode"
+            // "/Users/sandorzsolt/Desktop/__42/.vscode"
         ],
         "html.format.endWithNewline": true,
         "html.trace.server": "verbose",
