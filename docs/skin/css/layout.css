@@ -64,6 +64,8 @@ header {
   /* width: max-content; */
   display: flex;
   flex-direction: column;
+
+  background-color: aliceblue;
 }
 
 nav {
@@ -96,16 +98,27 @@ footer {
 nav {
   top: 5vh;
   position: sticky;
+  display: flex;
+  flex-direction: column;
   align-self: flex-start; /* fix when using flex and sticky together or align-items: stretch */
+
+  align-items: baseline;
+
+  width: max-content;
 }
 
-.jap {
+ul, li {
+
+}
+
+nav a {
   text-transform: uppercase;
 
   writing-mode: vertical-lr;
   writing-mode: sideways-lr;
   text-orientation: upright;
   text-transform: full-width;
+
   font-size: 0.75rem;
   font-weight: bold;
   -webkit-user-select: none; /* Safari */
@@ -113,19 +126,17 @@ nav {
   user-select: none; /* Standard syntax */
 }
 
-
-
-header a {
+nav a {
   color: rgb(84, 95, 105);
   background-color: rgb(255, 255, 255);
   padding: 1.6rem 0.6rem;
   border-radius: 99rem;
-  margin: 0.6rem;
+  margin: 0.1rem;
   display: inline-block;
   text-decoration: none;
 }
 
-.contact a {
+a.contact {
   color: black;
   background-color: var(--accent-color);
 }
@@ -138,10 +149,25 @@ header a {
  footer {
   padding: 100px;
   background-color: rgba(42, 42, 42, 1);
+
+  border-radius: 1rem;
+
   width: 100vw;
-  min-height: 100vh;
-  min-height: 100dvh;
+
+
+  margin: 3rem;
+
+  
+  
+  min-height: calc(100vh - 6em);
+  min-height: calc(100dvh - 6em);
+
+
   align-self: center;
+  
+  color: white;
+  display: block;
+  inset: 2000px;
 }
 
 
