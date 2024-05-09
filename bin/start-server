@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#python -m SimpleHTTPServer 3000
-
 # export PATH=/usr/local/php5/bin:$PATH
 
 PORT="8000"
@@ -9,10 +7,6 @@ PORT="8000"
 if [ -n "$1" ]; then
     PORT="$1"
 fi
-
-
-
-
 
 command_exists () {
     type "$1" &> /dev/null ;
@@ -23,6 +17,3 @@ if command_exists php ; then
 else
     /opt/homebrew/bin/php -S localhost:$PORT -t docs/
 fi
-
-
-
