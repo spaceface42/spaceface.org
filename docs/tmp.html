@@ -18,7 +18,10 @@
     </style>
 
     <style>
-        * {
+        /**
+         * just for debug
+         **/
+        * * {
             background-color: rgba(222, 222, 222, 0.1);
             mix-blend-mode: multiply;
             border: 1px dotted magenta;
@@ -29,11 +32,17 @@
         body {
             border: 12px solid cyan;
             background-color: white;
-            /*
+/*
             position: absolute; 
             inset: 2.4em 3em 3em 3em; 
-            */
+         */
         }
+        body * {
+            padding: 1rem;
+        }
+        /**
+         * just for debug
+         **/
 
 
 
@@ -65,13 +74,10 @@
             align-items: flex-start;
         }
 
-        body * {
-            padding: 1rem;
-        }
-
         header {
-            flex: 0;
+            flex: 1;
             min-width: fit-content;
+            position: sticky;
         }
 
         main {
@@ -108,6 +114,7 @@
         }
 
 
+
         /* override for screen sizes */
         @media (min-width: 900px) {
             body {
@@ -130,6 +137,7 @@
      -->
 </head>
 <body>
+
 
 
 <header>
@@ -162,6 +170,27 @@ flex-shrink : 1;  ➜ The div will shrink in same proportion as the window-size
 flex-basis : 0;   ➜ The div does not have a starting value as such and will 
                      take up screen as per the screen size available for
                      e.g:- if 3 divs are in the wrapper then each div will take 33%.
+
+body {
+
+display: flex;
+flex-direction: row;
+                                /*
+                                flex-direction: row;
+                                flex-wrap: wrap;
+                                is the same as
+                                flex-flow: row wrap;]
+                                */
+flex-direction: row;            /*  row is the default in our case so no need to define flex-direction: row */
+flex-wrap: wrap;                
+gap: 1rem;
+                                /*
+                                justify-content: flex-start;
+                                align-items: flex-start;
+                                align-content: flex-start;
+                                */
+align-items: flex-start;
+}
 </pre>
 </main>
 
