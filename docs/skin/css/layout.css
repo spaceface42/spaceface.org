@@ -63,7 +63,7 @@ header {
   padding: 3rem;
   /* width: max-content; */
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
 }
 
 nav {
@@ -143,14 +143,18 @@ a.contact {
 /**
  * footer
  */
- footer {
+ Xfooter {
   padding: 100px;
+
+  display: flex;
+  flex-flow: row wrap;
   background-color: rgba(42, 42, 42, 1);
 
   border-radius: 1rem;
 
-  width: 100vw;
 
+  width: 100vw;
+  width: 100dvw;
 
   margin: 3rem;
 
