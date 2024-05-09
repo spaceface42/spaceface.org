@@ -1,5 +1,10 @@
 <div class="cover">
+    <a href="#">
+        <object id="spaceface-logo" data="./skin/spaceface-logo-2.svg" type=""></object>
+    </a>
+    <div class="fake-transparent"></div>
 </div>
+
 <div class="scroll-icon">
     <div class="line-container">
         <div class="line"></div>
@@ -15,7 +20,32 @@
         height: 90dvh;
         background: url( './skin/selection-marching-ants.svg');
         background-size: contain;
+        background-repeat: no-repeat;
+        background-size: 70%;
     }
+
+    .xcover object {
+        width: 120px;
+    }
+
+    #spaceface-logo {
+        width: 120px;
+        position: fixed;
+        margin: 2rem 0 0 -3rem;
+        z-index: 3;
+        transform: rotate(2deg);
+        
+    }
+
+    .fake-transparent {
+        width: 600px;
+        height: 350px;
+        background: repeating-conic-gradient(#cbcdcb 0% 25%, #fffffe 0% 50%) 50%/8px 8px;
+        position: absolute;
+        margin: -3rem 3rem 0 2rem;
+        z-index: -3;
+    }
+
 
     .scroll-icon {
         height: 10vh;

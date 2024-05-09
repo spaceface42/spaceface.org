@@ -143,33 +143,7 @@ a.contact {
 /**
  * footer
  */
- Xfooter {
-  padding: 100px;
 
-  display: flex;
-  flex-flow: row wrap;
-  background-color: rgba(42, 42, 42, 1);
-
-  border-radius: 1rem;
-
-
-  width: 100vw;
-  width: 100dvw;
-
-  margin: 3rem;
-
-  
-  
-  min-height: calc(100vh - 6em);
-  min-height: calc(100dvh - 6em);
-
-
-  align-self: center;
-  
-  color: white;
-  display: block;
-  inset: 2000px;
-}
 
 
 
@@ -267,7 +241,7 @@ article:nth-child(7) {
 
 
 
-
+/* this pre is animated */
 pre {
   opacity: 0.5;
   padding: 3rem;

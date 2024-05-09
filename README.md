@@ -5,6 +5,8 @@ spaceface.org
 
 
 
+#### revork
+revork <pre> elements, these are animated by the observer, but I need to rework all from the project tags. currently these are <article>-s
 
 
 #### to implement if needed
