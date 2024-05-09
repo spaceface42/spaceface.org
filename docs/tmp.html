@@ -4,25 +4,184 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+        /**
+         * Reset
+         **/
+        *,
+        *::before,
+        *::after{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        }
+    </style>
 
+    <style>
+        * {
+            background-color: rgba(222, 222, 222, 0.1);
+            mix-blend-mode: multiply;
+            border: 1px dotted magenta;
+        }
+        pre {
+            border: none;
+        }
+        body {
+            border: 12px solid cyan;
+            background-color: white;
+            /*
+            position: absolute; 
+            inset: 2.4em 3em 3em 3em; 
+            */
+        }
+
+
+
+        /**
+         * layout
+         * define main elements
+         *
+         * flex parent is: body
+         * flex children are: header, main, footer
+         **/
+        body {
+
+            display: flex;
+            flex-direction: row;
+                                            /*
+[                                           flex-direction: row;
+                                            flex-wrap: wrap;
+                                            is the same as
+                                            flex-flow: row wrap;]
+                                            */
+            flex-direction: row;            /*  row is the default in our case so no need to define flex-direction: row */
+            flex-wrap: wrap;                
+            gap: 1rem;
+                                            /*
+                                            justify-content: flex-start;
+                                            align-items: flex-start;
+                                            align-content: flex-start;
+                                            */
+            align-items: flex-start;
+        }
+
+        body * {
+            padding: 1rem;
+        }
+
+        header {
+            flex: 0;
+            min-width: fit-content;
+        }
+
+        main {
+           /*  width: 65vw; */
+                                    /* 
+                                    flex basis will look of the child elements width 
+                                    so setting flex: 1 1 500px; will set the child to the 
+                                    width of 500 pixels
+                                    see more at: https://youtu.be/u044iM9xsWU?t=1094
+                                        /*  length unit
+                                        .selector {
+                                            flex: 100px;
+                                        }
+                                        equivalent
+                                        .selector {
+                                            flex-grow: 1;
+                                            flex-shrink: 1;
+                                            flex-basis: 100px;
+                                        }*/
+
+                                    /* flex         -grow       -shrink    -basis */
+           flex: initial;           /* flex:        0           1           auto  */
+           flex: auto;              /* flex:        1           1           auto  */
+            /* flex: none; */       /* flex:        0           0           auto  */
+            /* flex: 1; */          /* flex:        1           1           0     */
+            /* flex: 0; */
+            /* flex: 1 0; */
+        }   
+
+        /* last flex child */
+        footer {
+            flex: 100%; /* equals flex-grow: 1 flex-shrink: 1 flex-basis: 100% */
+            background-color: rgba(165, 140, 95, 0.5);
+        }
+
+
+        /* override for screen sizes */
+        @media (min-width: 900px) {
+            body {
+                flex-direction: row;
+                background-color: rgba(137, 43, 226, 0.11);
+            }
+        }
+        
+
+
+
+
+
+
+    </style>
+
+    <!-- 
     <link rel="stylesheet" href="./skin/debug/debug.css" />
     <script src="./skin/debug/debug.js"></script>
+     -->
 </head>
 <body>
 
 
+<header>
+<pre>
+header
 
-    <main>
-        <div>
-            <p>Lorem ipsum dolor sit.</p>
-        </div>
-        <pre>wfsdf</pre>
-        <ul>
-            <li>324234</li>
-            <li>354235</li>
-            <li>45345</li>
-        </ul>
-    </main>
+
+*********
+***  L  *
+** 0g ***
+**** O **
+
+some longer text header
+to simulate navigation links
+</pre>
+</header>
+
+<main>
+<pre>
+main 
+
+flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+default value is
+flex: 0 1 auto
+
+lex-grow : 1;    ➜ The div will grow in same proportion as the window-size       
+flex-shrink : 1;  ➜ The div will shrink in same proportion as the window-size 
+flex-basis : 0;   ➜ The div does not have a starting value as such and will 
+                     take up screen as per the screen size available for
+                     e.g:- if 3 divs are in the wrapper then each div will take 33%.
+</pre>
+</main>
+
+<footer>
+<pre>
+footer
+
+flex child is full width
+<a href="https://stackoverflow.com/questions/37386244/what-does-flex-1-mean">
+https://stackoverflow.com/questions/37386244/what-does-flex-1-mean
+</a>
+<a href="https://www.w3.org/TR/css-flexbox-1/#flex-common">
+https://www.w3.org/TR/css-flexbox-1/#flex-common
+</a>
+
+important
+<a href="https://youtu.be/u044iM9xsWU">https://youtu.be/u044iM9xsWU</a>
+</pre>
+</footer>
+
 
 
 
