@@ -16,8 +16,6 @@
     * just for debug
     **/
 
-
-
     * {
         border: 1px dotted magenta;
     }
@@ -71,8 +69,10 @@
     div {
         width: 100%;
         height: 300px;
-        background-color: rgba(0, 255, 255, 0.354);
+        /* background-color: rgba(179, 255, 0, 0.354); */
     }
+
+    /*
     div::before {
         position: relative;
         background: rgb(234, 242, 201);
@@ -81,6 +81,7 @@
         box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 6px, rgba(0, 0, 0, 0.1) 0px 3px 6px;
         content: 'id=' attr(id) ' class=' attr(class);
     }
+    */
 
 
     /**
@@ -113,6 +114,9 @@
             max-width: 100%;
             height: auto;
         }
+        .icon {
+            margin-inline-end: 1em;
+        }
 
 
 
@@ -129,7 +133,6 @@
             display: flex;
             flex-flow: row wrap;
             align-items: flex-start;
-
             gap: var(--space); /* debug */
         }
 
@@ -139,11 +142,10 @@
         /* header | flex child 1 */
         header {
             flex: auto;
-
-            /* only for position sticky */
-            align-self: flex-start;
             position: sticky;
             top: 0;
+            /* we need this for position sticky to work */
+            align-self: flex-start;
         }
 
         /*****************************************************************/
@@ -176,15 +178,37 @@
 
     </style>
 
-    <!-- 
-    <link rel="stylesheet" href="./skin/debug/debug.css" />
-    <script src="./skin/debug/debug.js"></script>
-     -->
+
+
 </head>
 <body>
 
 
 
+<!-- module -->
+<div class="cover">
+    cover
+    <style>
+        .cover {
+            display: flex;
+            flex: 0;
+            min-width: 100%;
+            height: 90vh;
+            background-color: rgb(165, 165, 25);
+            background-color: #ccc;
+            background-image:
+            linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%, white), 
+            linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%, white);
+            background-size:16px 16px;
+            background-position:0px 0px, 8px 8px;
+        }
+    </style>
+</div>
+<!-- / module -->
+
+
+
+<!-- module -->
 <div id="logo">
     <style>
         #logo {
@@ -192,12 +216,17 @@
             height: auto;
             position: absolute;
             z-index: 1;
-            top: 4rem;
-            left: 20%;
+            top: 32rem;
+            left: 0;
+        }
+        /* set width of logo as the minimum of 200px & 50vw */
+        #logo {
+            width: min(50vw, 80px);
         }
     </style>
     <object data="./skin/spaceface-logo-2.svg" type=""></object>
 </div>
+<!-- / module -->
 
 
 
@@ -210,20 +239,11 @@
 o * g *
 * O * *
 
-<textarea readonly>
-    <header>
-    <style>
-        header
-        header {
-            position: sticky;
-        }
-    </style>
-    </header>
-    </textarea>
-
 </pre>
 <nav>
-    navigation
+    <a href="/template.html">home</a>
+    <a href="#">selected</a>
+    <a href="#">contact</a>
 </nav>
 </header>
 <!------------------------------------ header ------------------------------------>
@@ -239,23 +259,6 @@ o * g *
 * a i *
 * * n *
 
-<textarea readonly>
-<main>
-<style>
-    main
-    body {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: flex-start;
-
-        gap: var(--space); /* debug */
-    }
-    main {
-        flex: 1 1 50%;
-    }   
-</style>
-</main>
-</textarea>
 </pre>
 <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
 
@@ -268,23 +271,34 @@ o * g *
 
 <!------------------------------------ footer ------------------------------------>
 <footer>
+
+<!-- module -->
+<style>
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space);
+}
+footer * {
+    min-width: max-content;
+    width: 500px;
+}
+</style>
+<div>1</div>
+<div>2</div>
+<div>
 <pre>
 
-* * f *
-* o O *
-* t * *
-r * * *
-
+    * * f *
+    * o O *
+    * t * *
+    r * * *
+    
 </pre>
+</div>
+<div>4</div>
 
-    <style>
-        footer {
-            display: flex;
-        }
-    </style>
-    <div>1</div>
-    <div>1</div>
-    <div>1</div>
+<!-- / module -->
 
 </footer>
 <!------------------------------------ footer ------------------------------------>
