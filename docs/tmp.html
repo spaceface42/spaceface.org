@@ -21,31 +21,108 @@
         /**
          * just for debug
          **/
-        * * {
-            background-color: rgba(222, 222, 222, 0.1);
-            mix-blend-mode: multiply;
+        :root {
+            background-color: rgb(233, 233, 233);
+            --space: 1rem;
+        }
+
+        * {
             border: 1px dotted magenta;
         }
-        pre {
+        pre, code {
             border: none;
+        }
+        code {
+            padding: var(--space);
         }
         body {
             border: 12px solid cyan;
-            background-color: white;
-/*
+            /* padding: var(--space); */
+            font: normal normal 400 10px/1.2 monospace;
+        /*
             position: absolute; 
             inset: 2.4em 3em 3em 3em; 
          */
         }
-        body * {
-            padding: 1rem;
+        body {
+            background-color: white;
         }
+
+        textarea {
+            width: 300px;
+        }
+        
+
+        header::before, main::before, footer::before,
+        header::after,  main::after,  footer::after {
+            position: relative;
+            background: rgb(234, 242, 201);
+            padding: 0.4rem;
+            border-radius: 3px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 6px, rgba(0, 0, 0, 0.1) 0px 3px 6px;
+        }
+
+
+        header::before {
+            content: '< header >';
+        }
+        header::after {
+            content: '< / header >';
+        }
+        main::before {
+            content: '< main >';
+        }
+        main::after {
+            content: '< / main >';
+        }
+        footer::before {
+            content: '< footer >';
+        }
+        footer::after {
+            content: '< / footer >';
+        }
+        header, main, footer {
+            padding: var(--space);
+            border-radius: 0.3rem;
+            background-color: rgb(251, 249, 244);
+
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+        }
+        div::before {
+            position: relative;
+            background: rgb(234, 242, 201);
+            padding: 0.4rem;
+            border-radius: 3px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 6px, rgba(0, 0, 0, 0.1) 0px 3px 6px;
+            content: "id=" attr(id) " class=" attr(class);
+        }
+
+
         /**
          * just for debug
          **/
 
+        /*****************************************************************/
+        /*****************************************************************/
+        /*****************************************************************/
 
 
+
+        /**
+         * utils
+         **/
+        img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+
+        /*****************************************************************/
         /**
          * layout
          * define main elements
@@ -54,34 +131,40 @@
          * flex children are: header, main, footer
          **/
         body {
-
             display: flex;
-            flex-direction: row;
-                                            /*
-[                                           flex-direction: row;
-                                            flex-wrap: wrap;
-                                            is the same as
-                                            flex-flow: row wrap;]
-                                            */
-            flex-direction: row;            /*  row is the default in our case so no need to define flex-direction: row */
-            flex-wrap: wrap;                
-            gap: 1rem;
-                                            /*
-                                            justify-content: flex-start;
-                                            align-items: flex-start;
-                                            align-content: flex-start;
-                                            */
+            flex-flow: row wrap;
             align-items: flex-start;
+
+            gap: var(--space); /* debug */
+
+            /* row is default
+            flex-direction: row | row-reverse | column | column-reverse;
+            flex-wrap: wrap;
+            is the same as
+            flex-flow: row wrap;
+            // Row is the default in our case so no need to define flex-direction: row 
+            
+            justify-content: flex-start;
+            align-items: flex-start;
+            align-content: flex-start;
+            */
         }
 
+
+
+        /*****************************************************************/
+        /* flex child 1 */
         header {
-            flex: 1;
-            min-width: fit-content;
+
             position: sticky;
         }
 
+
+
+        /*****************************************************************/
+        /* flex child 2 */
         main {
-           /*  width: 65vw; */
+            flex: 1 1 10%;
                                     /* 
                                     flex basis will look of the child elements width 
                                     so setting flex: 1 1 500px; will set the child to the 
@@ -99,33 +182,48 @@
                                         }*/
 
                                     /* flex         -grow       -shrink    -basis */
-           flex: initial;           /* flex:        0           1           auto  */
-           flex: auto;              /* flex:        1           1           auto  */
+                                    /* flex:        0           1           auto  */
+                                    /* flex:        1           1           auto  */
             /* flex: none; */       /* flex:        0           0           auto  */
             /* flex: 1; */          /* flex:        1           1           0     */
             /* flex: 0; */
             /* flex: 1 0; */
+            
+            /*
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 100px;
+            max-width: 100%;
+            */
         }   
 
-        /* last flex child */
+        /*****************************************************************/
+        /* flex child 3 */
         footer {
-            flex: 100%; /* equals flex-grow: 1 flex-shrink: 1 flex-basis: 100% */
-            background-color: rgba(165, 140, 95, 0.5);
+            /* flex: 100%; */ /* equals flex-grow: 1 flex-shrink: 1 flex-basis: 100% */
+            min-width: 100%;
+            flex-shrink: 1;
         }
 
 
 
+
+
+
+
+        
+
+
+        /*****************************************************************/
+        /*****************************************************************/
+        /*****************************************************************/
         /* override for screen sizes */
         @media (min-width: 900px) {
             body {
                 flex-direction: row;
-                background-color: rgba(137, 43, 226, 0.11);
             }
         }
         
-
-
-
 
 
 
@@ -140,24 +238,62 @@
 
 
 
+
+
+
+<!------------------------------------ header ------------------------------------>
 <header>
 <pre>
-header
 
+* * * *
+* * * L
+o * g *
+* O * *
 
-*********
-***  L  *
-** 0g ***
-**** O **
+<textarea readonly>
+    <header>
+    <style>
+        header
+        header {
+            flex: 1;
+            min-width: fit-content;
+            position: sticky;
+        }
+    </style>
+    </header>
+    </textarea>
 
-some longer text header
-to simulate navigation links
 </pre>
 </header>
+<!------------------------------------ header ------------------------------------>
 
+
+
+<!------------------------------------- main ------------------------------------->
 <main>
 <pre>
-main 
+
+* * * *
+* M * *
+* a i *
+* * n *
+
+<textarea readonly>
+<main>
+<style>
+    main
+    body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;                
+        gap: 1rem;
+        align-items: flex-start;
+    }
+</style>
+</main>
+</textarea>
+
+
 
 flex-grow: 0;
 flex-shrink: 1;
@@ -165,7 +301,7 @@ flex-basis: auto;
 default value is
 flex: 0 1 auto
 
-lex-grow : 1;    ➜ The div will grow in same proportion as the window-size       
+flex-grow : 1;    ➜ The div will grow in same proportion as the window-size       
 flex-shrink : 1;  ➜ The div will shrink in same proportion as the window-size 
 flex-basis : 0;   ➜ The div does not have a starting value as such and will 
                      take up screen as per the screen size available for
@@ -192,11 +328,24 @@ gap: 1rem;
 align-items: flex-start;
 }
 </pre>
-</main>
+<img src="./content/placeholder-1920x300.png" alt="placeholder image" />
 
+<div id="999" class="aha">98678576576867576kjhgjjk</div>
+
+</main>
+<!------------------------------------- main ------------------------------------->
+
+
+
+<!------------------------------------ footer ------------------------------------>
 <footer>
 <pre>
-footer
+
+* * f *
+* o O *
+* t * *
+r * * *
+
 
 flex child is full width
 <a href="https://stackoverflow.com/questions/37386244/what-does-flex-1-mean">
@@ -210,6 +359,11 @@ important
 <a href="https://youtu.be/u044iM9xsWU">https://youtu.be/u044iM9xsWU</a>
 </pre>
 </footer>
+<!------------------------------------ footer ------------------------------------>
+
+
+
+
 
 
 
