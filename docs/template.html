@@ -10,39 +10,27 @@
 
 
 
-    <!-- debug only -->
+    <!-- debug only 
     <style>
     /**
     * just for debug
     **/
 
-    * {
+    z {
         border: 1px dotted magenta;
     }
-    pre, code {
-        border: none;
-    }
-    code {
-        padding: var(--space);
-    }
-    body {
-        border: 12px solid cyan;
+
+    z-body {
+        /* border: 12px solid cyan; */
         /* padding: var(--space); */
         font: normal normal 400 10px/1.2 monospace;
-    /*
+        /*
         position: absolute; 
         inset: 2.4em 3em 3em 3em; 
         */
     }
-    body {
-        background-color: white;
-    }
-
-    textarea {
-        width: 300px;
-    }
     
-
+    /*
     header::before, main::before, footer::before,
     header::after,  main::after,  footer::after {
         position: relative;
@@ -58,19 +46,15 @@
     main::after {content: '< / main >'}
     footer::before {content: '< footer >'}
     footer::after {content: '< / footer >'}
+    */
 
+    /*
     header, main, footer {
-        padding: var(--space);
-        border-radius: 0.3rem;
         background-color: rgb(251, 249, 244);
-
     }
+    */
 
-    div {
-        width: 100%;
-        height: 300px;
-        /* background-color: rgba(179, 255, 0, 0.354); */
-    }
+
 
     /*
     div::before {
@@ -92,7 +76,7 @@
     /*****************************************************************/
     /*****************************************************************/
     </style>
-
+    -->
 
 
     <!-- flex code for main elements -->
@@ -102,8 +86,8 @@
          * variables
          */
         :root {
-            background-color: rgb(233, 233, 233);
             --space: 1rem;
+            --main-bg-color: hsl(88, 16%, 57%);
         }
 
         /**
@@ -133,7 +117,8 @@
             display: flex;
             flex-flow: row wrap;
             align-items: flex-start;
-            gap: var(--space); /* debug */
+            /* debug */
+            /* gap: var(--space); */
         }
 
 
@@ -158,7 +143,7 @@
         /* flex child 3 */
         footer {
             min-width: 100%;
-            flex-shrink: 1;
+            flex-shrink: 1; /* maybe this is not required */
         }
 
 
@@ -175,6 +160,16 @@
         
 
 
+    </style>
+
+    <style>
+
+        /**
+         * tipo and colors
+         */
+        body {
+            font: normal normal 400 10px/1.2 monospace;
+        }
 
     </style>
 
@@ -187,7 +182,6 @@
 
 <!-- module -->
 <div class="cover">
-    cover
     <style>
         .cover {
             display: flex;
@@ -202,7 +196,11 @@
             background-size:16px 16px;
             background-position:0px 0px, 8px 8px;
         }
+        .cover p{
+            margin: 12rem;
+        }
     </style>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio architecto saepe eaque.</p>
 </div>
 <!-- / module -->
 
@@ -232,14 +230,22 @@
 
 <!------------------------------------ header ------------------------------------>
 <header>
-<pre>
-
-* * * *
-* * * L
-o * g *
-* O * *
-
-</pre>
+<style>
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+nav a {
+    display: inline;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: aqua;
+    border-radius: 99rem;
+    flex: 0;
+    
+}
+</style>
 <nav>
     <a href="/template.html">home</a>
     <a href="#">selected</a>
@@ -252,17 +258,25 @@ o * g *
 
 <!------------------------------------- main ------------------------------------->
 <main>
-<pre>
 
-* * * *
-* M * *
-* a i *
-* * n *
+<style>
+    .project {
+        padding: 3rem;
+    }
+</style>
+<article class="project">
 
-</pre>
-<img src="./content/placeholder-1920x300.png" alt="placeholder image" />
+    <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
+</article>
 
-<div id="999" class="aha">98678576576867576kjhgjjk</div>
+<article class="project">
+    <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
+</article>
+
+<article class="project">
+    <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
+</article>
+
 
 </main>
 <!------------------------------------- main ------------------------------------->
@@ -278,25 +292,22 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space);
+
+
+    border-radius: 0.5rem;
+    padding: 5rem;
+
 }
 footer * {
     min-width: max-content;
-    width: 500px;
+    flex: 1;
+    height: 900px;
+
 }
 </style>
 <div>1</div>
 <div>2</div>
-<div>
-<pre>
-
-    * * f *
-    * o O *
-    * t * *
-    r * * *
-    
-</pre>
-</div>
-<div>4</div>
+<div>3</div>
 
 <!-- / module -->
 
@@ -305,7 +316,46 @@ footer * {
 
 
 
+<script>
+    class RandomBackgroundColor {
+  constructor(elementSelector) {
+    this.elements = document.querySelectorAll(elementSelector);
+    this.colors = ['#f4f1de', '#e07a5f', '#3d405b', '#81b29a', '#f2cc8f', '#6d597a', '#e56b6f'];
+  }
 
+  getRandomColor() {
+    return this.colors[Math.floor(Math.random() * this.colors.length)];
+  }
+
+  applyRandomColor() {
+    this.elements.forEach((element) => {
+      const level = this.getLevel(element);
+      if (level === 3) {
+        element.style.backgroundColor = this.getRandomColor();
+      }
+    });
+  }
+
+  getLevel(element) {
+    let level = 1;
+    let parent = element.parentNode;
+    while (parent !== null) {
+      if (parent.tagName.toLowerCase() !== 'html') {
+        level++;
+        parent = parent.parentNode;
+      } else {
+        break;
+      }
+    }
+    return level;
+  }
+}
+
+// Usage example:
+const randomBgColor = new RandomBackgroundColor('body * * ');
+randomBgColor.applyRandomColor();
+
+</script>
 
 
 
