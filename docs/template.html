@@ -100,96 +100,51 @@
             height: auto;
         }
 
+
+
         /*****************************************************************/
         /**
          * layout
-         * define main elements
-         *
-         * flex parent is: body
-         * flex children are: header, main, footer
-         **/
+         * body / header |  main | footer
+         */
+
+        /**
+         * body | flex container
+         */
         body {
             display: flex;
             flex-flow: row wrap;
             align-items: flex-start;
 
             gap: var(--space); /* debug */
-
-            /* row is default
-            flex-direction: row | row-reverse | column | column-reverse;
-            flex-wrap: wrap;
-            is the same as
-            flex-flow: row wrap;
-            // Row is the default in our case so no need to define flex-direction: row 
-            
-            justify-content: flex-start;
-            align-items: flex-start;
-            align-content: flex-start;
-            */
         }
 
 
 
         /*****************************************************************/
-        /* flex child 1 */
+        /* header | flex child 1 */
         header {
+            flex: auto;
 
+            /* only for position sticky */
+            align-self: flex-start;
             position: sticky;
+            top: 0;
         }
-
-
 
         /*****************************************************************/
         /* flex child 2 */
         main {
-            flex: 1 1 10%;
-                                    /* 
-                                    flex basis will look of the child elements width 
-                                    so setting flex: 1 1 500px; will set the child to the 
-                                    width of 500 pixels
-                                    see more at: https://youtu.be/u044iM9xsWU?t=1094
-                                        /*  length unit
-                                        .selector {
-                                            flex: 100px;
-                                        }
-                                        equivalent
-                                        .selector {
-                                            flex-grow: 1;
-                                            flex-shrink: 1;
-                                            flex-basis: 100px;
-                                        }*/
-
-                                    /* flex         -grow       -shrink    -basis */
-                                    /* flex:        0           1           auto  */
-                                    /* flex:        1           1           auto  */
-            /* flex: none; */       /* flex:        0           0           auto  */
-            /* flex: 1; */          /* flex:        1           1           0     */
-            /* flex: 0; */
-            /* flex: 1 0; */
-            
-            /*
-            flex-grow: 1;
-            flex-shrink: 1;
-            flex-basis: 100px;
-            max-width: 100%;
-            */
+            flex: 1 1 75%;
         }   
 
         /*****************************************************************/
         /* flex child 3 */
         footer {
-            /* flex: 100%; */ /* equals flex-grow: 1 flex-shrink: 1 flex-basis: 100% */
             min-width: 100%;
             flex-shrink: 1;
         }
 
-
-
-
-
-
-
-        
 
 
         /*****************************************************************/
@@ -233,8 +188,6 @@ o * g *
     <style>
         header
         header {
-            flex: 1;
-            min-width: fit-content;
             position: sticky;
         }
     </style>
@@ -242,6 +195,9 @@ o * g *
     </textarea>
 
 </pre>
+<nav>
+    navigation
+</nav>
 </header>
 <!------------------------------------ header ------------------------------------>
 
@@ -262,49 +218,17 @@ o * g *
     main
     body {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;                
-        gap: 1rem;
+        flex-flow: row wrap;
         align-items: flex-start;
+
+        gap: var(--space); /* debug */
     }
+    main {
+        flex: 1 1 50%;
+    }   
 </style>
 </main>
 </textarea>
-
-
-
-flex-grow: 0;
-flex-shrink: 1;
-flex-basis: auto;
-default value is
-flex: 0 1 auto
-
-flex-grow : 1;    ➜ The div will grow in same proportion as the window-size       
-flex-shrink : 1;  ➜ The div will shrink in same proportion as the window-size 
-flex-basis : 0;   ➜ The div does not have a starting value as such and will 
-                     take up screen as per the screen size available for
-                     e.g:- if 3 divs are in the wrapper then each div will take 33%.
-
-body {
-
-display: flex;
-flex-direction: row;
-                                /*
-                                flex-direction: row;
-                                flex-wrap: wrap;
-                                is the same as
-                                flex-flow: row wrap;]
-                                */
-flex-direction: row;            /*  row is the default in our case so no need to define flex-direction: row */
-flex-wrap: wrap;                
-gap: 1rem;
-                                /*
-                                justify-content: flex-start;
-                                align-items: flex-start;
-                                align-content: flex-start;
-                                */
-align-items: flex-start;
-}
 </pre>
 <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
 
@@ -323,7 +247,6 @@ align-items: flex-start;
 * o O *
 * t * *
 r * * *
-
 
 flex child is full width
 <a href="https://stackoverflow.com/questions/37386244/what-does-flex-1-mean">
