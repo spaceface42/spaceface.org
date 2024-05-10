@@ -357,5 +357,3 @@ footer {
 .tags strike::after { content: "</strike>"; }
 .tags tt::before { content: "<tt>"; }
 .tags tt::after { content: "</tt>"; }
-.tags xmp::before { content: "<xmp>"; }
-.tags xmp::after { content: "</xmp>"; }
