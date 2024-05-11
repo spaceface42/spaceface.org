@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-a40782b1-4d4b-4e2a-90e7-1558f4f7c46a" data-name="css3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 112">
+  <defs>
+    <style>
+      .uuid-66423f70-6525-41ea-8e2d-60258ebf506e {
+        fill: #000;
+      }
+
+      .uuid-66423f70-6525-41ea-8e2d-60258ebf506e, .uuid-7a97b75e-a16a-41ea-9e9e-137658f1e743, .uuid-3922015a-ce33-47f1-93a5-c46077aae125, .uuid-a906f8b5-0c19-4365-b390-a8310ac15b0e, .uuid-b00c8c52-81ce-4a0b-b6fc-9b250369eb9f {
+        stroke-width: 0px;
+      }
+
+      .uuid-7a97b75e-a16a-41ea-9e9e-137658f1e743 {
+        fill: #e44d26;
+      }
+
+      .uuid-3922015a-ce33-47f1-93a5-c46077aae125 {
+        fill: #ebebeb;
+      }
+
+      .uuid-a906f8b5-0c19-4365-b390-a8310ac15b0e {
+        fill: #f16529;
+      }
+
+      .uuid-b00c8c52-81ce-4a0b-b6fc-9b250369eb9f {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path class="uuid-66423f70-6525-41ea-8e2d-60258ebf506e" d="M8.62.63h5.01v4.93h4.61V.63h5.01v14.93h-5.01v-4.98h-4.57v4.98h-5.05M29.87,5.61h-4.42V.63h13.87v4.98h-4.44v9.96h-5.01M41.52.63h5.25l3.22,5.26,3.22-5.26h5.25v14.93h-5.01v-7.4l-3.5,5.37-3.5-5.37v7.4h-4.92M60.93.63h5.01v10h7.1v4.93h-12.1"/>
+  <path class="uuid-7a97b75e-a16a-41ea-9e9e-137658f1e743" d="M8.45,102.57L1.27,22.4h78.98l-7.18,80.12-32.37,8.92"/>
+  <path class="uuid-a906f8b5-0c19-4365-b390-a8310ac15b0e" d="M40.76,104.63V28.98h32.28l-6.16,68.39"/>
+  <path class="uuid-3922015a-ce33-47f1-93a5-c46077aae125" d="M15.94,38.79h24.82v9.83h-13.98l.91,10.06h13.06v9.8h-22.12M19.07,73.42h9.93l.7,7.86,11.06,2.94v10.26l-20.29-5.63"/>
+  <path class="uuid-b00c8c52-81ce-4a0b-b6fc-9b250369eb9f" d="M65.48,38.79h-24.77v9.83h23.86M63.68,58.68h-22.97v9.83h12.19l-1.15,12.77-11.04,2.94v10.22l20.24-5.58"/>
+</svg>
