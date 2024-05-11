@@ -26,6 +26,20 @@ https://www.youtube.com/watch?v=o1HzOJfgugE&t=597s
 self hosting fonts
 https://www.youtube.com/watch?v=zK-yy6C2Nck
 
+footer
+svg
+icons
+<svg aria-hidden="true" focusable="false" ...>
+    <!-- child elements of the inline SVG would go here -->
+</svg>
+
+If an SVG is used in a context where it adds meaning to the content then it is not being used as an icon, and requires a different markup pattern:
+<svg role="img" focusable="false">
+    <title>Accessible Name</title>
+     <!-- child elements of the inline SVG would go here -->
+</svg>
+Note that path and any other direct child elements of the SVG should receive the aria-hidden="true" attribute if they contain no information that should be made accessible.
+
 
 #### using
 vscode kawaii color theme

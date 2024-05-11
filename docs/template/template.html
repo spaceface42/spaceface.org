@@ -297,22 +297,38 @@ nav a {
         flex-wrap: wrap;
         gap: var(--space);
 
-        border-radius: 0.5rem;
-        padding: 5rem;
 
+
+        padding: 3rem;
+        font-size: 12px;
+        background-color:rgb(104, 124, 141);
     }
     footer * {
         /* min-width: max-content; */
         flex: 1 1 300px;
-        flex-basis: content; /*!!!!!!!!!!!!!!!!!!!!!*/
+        flex-basis: content; /* Automatically size based on the flex item's content */
     }
     </style>
     <div>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum sapiente rem, optio fugiat iste, quod nisi ducimus similique quibusdam corporis repudiandae minus!</p>
+        <ul>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde.</li>
+            <li>Lorem ipsum dolor sit amet consectetur.</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+        </ul>
     </div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
+    <div>
+        <p>Lorem, ipsum dolor.</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus.</p>
+    </div>
+    <div>
+        <object data="./html5-icon.svg" type=""></object>
+        <object data="./css3-icon.svg" type=""></object>
+        <object data="./js-icon.svg" type=""></object>
+    </div>
     <!-- / module -->
 
 </footer>
@@ -356,7 +372,7 @@ nav a {
 }
 
 // Usage example:
-const randomBgColor = new RandomBackgroundColor('body * * ');
+const randomBgColor = new RandomBackgroundColor('body * ');
 randomBgColor.applyRandomColor();
 
 </script>
