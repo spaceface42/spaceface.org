@@ -6,7 +6,7 @@
     <title>template</title>
 
     <!-- redet and defaults -->
-    <link rel="stylesheet" href="./skin/css/defaults.css" />
+    <link rel="stylesheet" href="../skin/css/defaults.css" />
 
 
 
@@ -201,7 +201,7 @@
                 width: clamp(100px, 50%, 200px);
             }
         </style>
-        <object data="./skin/spaceface-logo-9.svg" type=""></object>
+        <object data="../skin/spaceface-logo-9.svg" type=""></object>
     </div>
     <!------------------------------------ module ------------------------------------>
 
@@ -253,7 +253,7 @@ nav a {
 }
 </style>
 <nav>
-    <a href="/template.html">home</a>
+    <a href="./template.html">home</a>
     <a href="#">selected</a>
     <a href="#">contact</a>
 </nav>
@@ -271,15 +271,15 @@ nav a {
         }
     </style>
     <article class="project">
-        <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
+        <img src="../content/placeholder-1920x300.png" alt="placeholder image" />
     </article>
 
     <article class="project">
-        <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
+        <img src="../content/placeholder-1920x300.png" alt="placeholder image" />
     </article>
 
     <article class="project">
-        <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
+        <img src="../content/placeholder-1920x300.png" alt="placeholder image" />
     </article>
 
 </main>
@@ -304,9 +304,15 @@ nav a {
         background-color:rgb(104, 124, 141);
     }
     footer * {
-        /* min-width: max-content; */
+        min-width: max-content;
         flex: 1 1 300px;
-        flex-basis: content; /* Automatically size based on the flex item's content */
+         /* flex-basis: content; Automatically size based on the flex item's content */
+         flex-basis: content;
+    }
+    footer {
+        object {
+            width: 60px;
+        }
     }
     </style>
     <div>
@@ -324,11 +330,13 @@ nav a {
     <div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus.</p>
     </div>
+    <!--      -->
     <div>
         <object data="./html5-icon.svg" type=""></object>
         <object data="./css3-icon.svg" type=""></object>
         <object data="./js-icon.svg" type=""></object>
     </div>
+
     <!-- / module -->
 
 </footer>
