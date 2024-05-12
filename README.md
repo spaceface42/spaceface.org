@@ -3,6 +3,38 @@ spaceface.org
 
 
 
+skin is something like this
+---------------------------------
+|                               |
+|                               |
+|             hero              |       can contain anything text / image / svg / 
+|                               |       sticky pos logo
+|                               |
+---------------------------------
+|      |       |                |
+|   h  |   l   |       c        |       header contains the nav / possible the logo
+|   e  |   o   |       o        |
+|   a  |   g   |       n        |
+|   d  |   o   |       t        |
+|   e  |       |       e        |
+|   r  |       |       n        |
+|      |       |       t        |
+|      |       |                |
+|      |       |                |
+---------------------------------
+|                               |
+|            footer             |
+|                               |
+---------------------------------
+
+body is a flex parent
+header, main, footer are flex children but and also parent
+
+
+
+
+
+
 
 
 #### revork
@@ -43,6 +75,10 @@ Note that path and any other direct child elements of the SVG should receive the
 
 #### using
 vscode kawaii color theme
+
+Line Highlight Bookmark extension
+ctrl b / ctrl shit b
+
 
 
 
