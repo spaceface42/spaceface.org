@@ -92,7 +92,18 @@
          */
         :root {
             --space: 1rem;
+            --stage-width: calc( 100vw - 2 * var(--space));
             --main-bg-color: rgb(248, 248, 248);
+        }
+
+
+        .stage {
+            /* width: var(--stage-width); */
+            width: 100%;
+            margin: var(--space);
+            height: 100px;
+            background-color: magenta;
+            border-radius: var(--space);
         }
 
         /**
@@ -173,10 +184,15 @@
 </head>
 <body>
 
+    <div class="stage">
+        stage
+    </div>
 
 
 <!------------------------------------ module ------------------------------------>
-<div class="cover">
+<section class="cover">
+
+
 
     <style>
 
@@ -232,7 +248,7 @@
     </div>
     <!------------------------------------ module ------------------------------------>
 
-</div>
+</section>
 <!------------------------------------ module ------------------------------------>
 
 
@@ -304,8 +320,6 @@ nav a {
         flex-wrap: wrap;
         gap: var(--space);
 
-
-
         padding: 3rem;
         font-size: 12px;
         background-color:rgb(104, 124, 141);
@@ -334,7 +348,7 @@ nav a {
         background-color: aquamarine;
     }
     </style>
-    <div>
+    <div id="contact">
         <ul>
             <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde.</li>
             <li>Lorem ipsum dolor sit amet consectetur.</li>
@@ -343,8 +357,15 @@ nav a {
             <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
         </ul>
     </div>
-    <div>
-        <p>Lorem, ipsum dolor.</p>
+    <div id="brands I worked with">
+        <ul>
+            <li>nokia hungary</li>
+            <li>elcoteq hungary</li>
+            <li>british american tobacco hungary</li>
+            <li>kirowsky hungary</li>
+            <li>deutsche telekom</li>
+            <li>zsolnay negyed</li>
+        </ul>
     </div>
     <div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus.</p>
