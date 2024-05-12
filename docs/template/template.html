@@ -16,6 +16,7 @@
     * just for debug
     **/
 
+    /*
     body * * {
         outline: 8px solid rgba(179, 168, 179, 0.473);
     }
@@ -28,6 +29,7 @@
     body * * * * {
         outline: 2px solid rgba(255, 208, 0, 0.616);
     }
+    */
 
     body {
         /* border: 12px solid cyan; */
@@ -83,7 +85,7 @@
     </style>
 
 
-
+    <!--------------------------------- main style --------------------------------->
     <!-- flex code for main elements -->
     <style>
 
@@ -102,7 +104,7 @@
             width: 100%;
             margin: var(--space);
             height: 100px;
-            background-color: magenta;
+            background-color: gray;
             border-radius: var(--space);
         }
 
@@ -324,29 +326,39 @@ nav a {
         font-size: 12px;
         background-color:rgb(104, 124, 141);
     }
-    footer * {
-        min-width: max-content;
-        flex: 1 1 300px;
+    footer div {
+        min-width: content;
+        flex: 1 1 30px;
          /* flex-basis: content; Automatically size based on the flex item's content */
-         flex-basis: content;
+         /* flex-basis: content; */
+         border: 1px solid white;
     }
+
     /* footer div:last-child */
     /* it is also a flex child but also a flex parent */
     #legal {
+        /* parent */
+        /* min-width: 100%; */
         flex-basis: 100%;
-        flex-grow: 1;
 
+        /*
+        
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: flex-start;
         display: flex;
         gap: var(--space);
-    }
-    #legal * {
+        */
 
+        /* flex: 0; */
     }
-    /* icons from svg -- needs restructuring */
-    footer object {
-        max-width: 60px;
-        background-color: aquamarine;
+
+    /* @follow-up */
+    #legal * {
+        width: 60px;
     }
+
+
     </style>
     <div id="contact">
         <ul>
@@ -371,9 +383,9 @@ nav a {
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus.</p>
     </div>
     <div id="legal">
-        <object type="image/svg+xml" data="./html5.svg" type=""></object>
-        <object type="image/svg+xml" data="./css.svg" type=""></object>
-        <object type="image/svg+xml" data="./js.svg" type=""></object>
+        <object type="image/svg+xml" data="./SVG/html5.svg" type=""></object>
+        <object type="image/svg+xml" data="./SVG/css.svg" type=""></object>
+        <object type="image/svg+xml" data="./SVG/js.svg" type=""></object>
     </div>
     <!-- / module -->
 
