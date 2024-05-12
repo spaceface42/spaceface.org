@@ -10,106 +10,30 @@
 
 
 
-    <!-- debug only     -->
     <style>
-    /**
-    * just for debug
-    **/
-
-    /*
-    body * * {
-        outline: 8px solid rgba(179, 168, 179, 0.473);
-    }
-    body * * * {
-        outline: 6px solid rgba(0, 255, 255, 0.432);
-    }
-    body * * * * {
-        outline: 4px solid rgba(136, 255, 0, 0.712);
-    }
-    body * * * * {
-        outline: 2px solid rgba(255, 208, 0, 0.616);
-    }
-    */
-
-    body {
-        /* border: 12px solid cyan; */
-        /* padding: var(--space); */
-        /*
-        position: absolute; 
-        inset: 2.4em 3em 3em 3em; 
-        */
-    }
-    
-    /*
-    header::before, main::before, footer::before,
-    header::after,  main::after,  footer::after {
-        position: relative;
-        background: rgb(234, 242, 201);
-        padding: 0.4rem;
-        border-radius: 3px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 6px, rgba(0, 0, 0, 0.1) 0px 3px 6px;
-    }
-
-    header::before { content: '< header >'}
-    header::after {content: '< / header >'}
-    main::before {content: '< main >'}
-    main::after {content: '< / main >'}
-    footer::before {content: '< footer >'}
-    footer::after {content: '< / footer >'}
-    */
-
-    /*
-    header, main, footer {
-        background-color: rgb(251, 249, 244);
-    }
-    */
-
-    /*
-    div::before {
-        position: relative;
-        background: rgb(234, 242, 201);
-        padding: 0.4rem;
-        border-radius: 3px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 6px, rgba(0, 0, 0, 0.1) 0px 3px 6px;
-        content: 'id=' attr(id) ' class=' attr(class);
-    }
-    */
-
-    /**
-     * just for debug
-     */
-
-    /*****************************************************************/
-    /*****************************************************************/
-    /*****************************************************************/
-    </style>
-
-
-    <!--------------------------------- main style --------------------------------->
-    <!-- flex code for main elements -->
-    <style>
-
         /**
-         * variables
+         * @note CSS variables
          */
         :root {
             --space: 1rem;
+            --corner: 0.5rem;
             --stage-width: calc( 100vw - 2 * var(--space));
-            --main-bg-color: rgb(248, 248, 248);
+            --main-bg-color: rgb(240, 240, 240);
         }
-
 
         .stage {
             /* width: var(--stage-width); */
             width: 100%;
+            height: 90vh;   /* fallback when dvh is not supported */
+            height: 90dvh;  /* mobile */
             margin: var(--space);
-            height: 100px;
-            background-color: gray;
-            border-radius: var(--space);
+            border-radius: var(--corner);
+            background-color: var(--main-bg-color);
+
         }
 
         /**
-         * utils
+         * @note CSS utils
          */
         img {
             display: block;
@@ -119,7 +43,8 @@
 
         /*****************************************************************/
         /**
-         * layout
+         * @note CSS LAYOUT
+         * flex code for main elements
          * body / header |  main | footer
          */
 
@@ -159,9 +84,10 @@
         }
 
         /*****************************************************************/
-        /*****************************************************************/
-        /*****************************************************************/
-        /* override for screen sizes */
+        /**
+         * @note CSS override
+         * override for screen size
+         */
         @media (min-width: 900px) {
             body {
                 flex-direction: row;
@@ -173,7 +99,7 @@
     <style>
 
         /**
-         * tipo and colors
+         * @note CSS typo and colors
          */
         body {
             font: normal normal 400 1.15rem/1.5 monospace;
@@ -272,7 +198,7 @@ nav a {
     margin: 1rem;
     padding: 1rem;
     background-color: aqua;
-    border-radius: 99rem;
+    border-radius: var(--corner);
     flex: 0;
     
 }
@@ -293,6 +219,7 @@ nav a {
     <style>
         .project {
             padding: 3rem;
+            border: 1px solid magenta;
         }
     </style>
     <article class="project">
@@ -324,7 +251,6 @@ nav a {
 
         padding: 3rem;
         font-size: 12px;
-        background-color:rgb(104, 124, 141);
     }
 
     footer div {
@@ -334,12 +260,12 @@ nav a {
         /* flex-basis: content; */
         /* flex-basis: content; Automatically size based on the flex item's content */
         background-color: #ccc;
-        border-radius: 0.3rem;
+        border-radius: var(--corner);
     }
     /* footer div:last-child */
     /* it is also a flex child but also a flex parent */
     /* #legal { */
-    /*  @note */
+    /*  @note CSS footer last row */
     footer div:last-child {
         min-width: 100%;
         flex-basis: 100%; /* @follow-up seems to be obsolete */

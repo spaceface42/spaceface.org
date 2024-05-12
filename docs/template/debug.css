@@ -1,0 +1,70 @@
+    /**
+    * just for debug
+    **/
+
+    /*
+    body * * {
+        outline: 8px solid rgba(179, 168, 179, 0.473);
+    }
+    body * * * {
+        outline: 6px solid rgba(0, 255, 255, 0.432);
+    }
+    body * * * * {
+        outline: 4px solid rgba(136, 255, 0, 0.712);
+    }
+    body * * * * {
+        outline: 2px solid rgba(255, 208, 0, 0.616);
+    }
+    */
+
+    body {
+        /* border: 12px solid cyan; */
+        /* padding: var(--space); */
+        /*
+        position: absolute; 
+        inset: 2.4em 3em 3em 3em; 
+        */
+    }
+    
+    /*
+    header::before, main::before, footer::before,
+    header::after,  main::after,  footer::after {
+        position: relative;
+        background: rgb(234, 242, 201);
+        padding: 0.4rem;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 6px, rgba(0, 0, 0, 0.1) 0px 3px 6px;
+    }
+
+    header::before { content: '< header >'}
+    header::after {content: '< / header >'}
+    main::before {content: '< main >'}
+    main::after {content: '< / main >'}
+    footer::before {content: '< footer >'}
+    footer::after {content: '< / footer >'}
+    */
+
+    /*
+    header, main, footer {
+        background-color: rgb(251, 249, 244);
+    }
+    */
+
+    /*
+    div::before {
+        position: relative;
+        background: rgb(234, 242, 201);
+        padding: 0.4rem;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 6px, rgba(0, 0, 0, 0.1) 0px 3px 6px;
+        content: 'id=' attr(id) ' class=' attr(class);
+    }
+    */
+
+    /**
+     * just for debug
+     */
+
+    /*****************************************************************/
+    /*****************************************************************/
+    /*****************************************************************/
