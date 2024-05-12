@@ -10,20 +10,28 @@
 
 
 
-    <!-- debug only 
+    <!-- debug only     -->
     <style>
     /**
     * just for debug
     **/
 
-    z {
-        border: 1px dotted magenta;
+    body * * {
+        outline: 8px solid rgba(179, 168, 179, 0.473);
+    }
+    body * * * {
+        outline: 6px solid rgba(0, 255, 255, 0.432);
+    }
+    body * * * * {
+        outline: 4px solid rgba(136, 255, 0, 0.712);
+    }
+    body * * * * {
+        outline: 2px solid rgba(255, 208, 0, 0.616);
     }
 
-    z-body {
+    body {
         /* border: 12px solid cyan; */
         /* padding: var(--space); */
-        font: normal normal 400 10px/1.2 monospace;
         /*
         position: absolute; 
         inset: 2.4em 3em 3em 3em; 
@@ -54,8 +62,6 @@
     }
     */
 
-
-
     /*
     div::before {
         position: relative;
@@ -67,16 +73,15 @@
     }
     */
 
-
     /**
-        * just for debug
-        **/
+     * just for debug
+     */
 
     /*****************************************************************/
     /*****************************************************************/
     /*****************************************************************/
     </style>
-    -->
+
 
 
     <!-- flex code for main elements -->
@@ -98,11 +103,6 @@
             max-width: 100%;
             height: auto;
         }
-        .icon {
-            margin-inline-end: 1em;
-        }
-
-
 
         /*****************************************************************/
         /**
@@ -112,6 +112,7 @@
 
         /**
          * body | flex container
+         * level 01
          */
         body {
             display: flex;
@@ -120,8 +121,6 @@
             /* debug */
             /* gap: var(--space); */
         }
-
-
 
         /*****************************************************************/
         /* header | flex child 1 */
@@ -146,8 +145,6 @@
             flex-shrink: 1; /* maybe this is not required */
         }
 
-
-
         /*****************************************************************/
         /*****************************************************************/
         /*****************************************************************/
@@ -157,8 +154,6 @@
                 flex-direction: row;
             }
         }
-        
-
 
     </style>
 
@@ -183,8 +178,40 @@
 <!------------------------------------ module ------------------------------------>
 <div class="cover">
 
+    <style>
+
+        .cover {
+            background-color: #ccc;
+            display: flex;
+            flex: 0;
+            min-width: 100%;
+            height: 90vh;
+        }
+        .layer {
+            width: 45vw;
+            height: 55vh;
+            flex: 0;
+            position: relative;
+            top: 10vh;
+            left: 10rem;
+            background-color: rgb(165, 165, 25);
+            background-color: #ccc;
+            background-image:
+            linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%, white), 
+            linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%, white);
+            background-size:16px 16px;
+            background-position:0px 0px, 8px 8px;
+        }
+        .cover p{
+            margin: 12rem;
+        }
+    </style>
+
+    <div class="layer">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio architecto saepe eaque.</p>   
+    </div>
+
     <!------------------------------------ module ------------------------------------>
-    <!-- currently I am here -->
     <div id="logo">
         <style>
             #logo {
@@ -205,26 +232,6 @@
     </div>
     <!------------------------------------ module ------------------------------------>
 
-
-    <style>
-        .cover {
-            display: flex;
-            flex: 0;
-            min-width: 100%;
-            height: 90vh;
-            background-color: rgb(165, 165, 25);
-            background-color: #ccc;
-            background-image:
-            linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%, white), 
-            linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%, white);
-            background-size:16px 16px;
-            background-position:0px 0px, 8px 8px;
-        }
-        .cover p{
-            margin: 12rem;
-        }
-    </style>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio architecto saepe eaque.</p>
 </div>
 <!------------------------------------ module ------------------------------------>
 
@@ -309,11 +316,22 @@ nav a {
          /* flex-basis: content; Automatically size based on the flex item's content */
          flex-basis: content;
     }
-    footer {
-        svg {
-            width: 60px;
-            height: auto;
-        }
+    /* footer div:last-child */
+    /* it is also a flex child but also a flex parent */
+    #legal {
+        flex-basis: 100%;
+        flex-grow: 1;
+
+        display: flex;
+        gap: var(--space);
+    }
+    #legal * {
+
+    }
+    /* icons from svg -- needs restructuring */
+    footer object {
+        max-width: 60px;
+        background-color: aquamarine;
     }
     </style>
     <div>
@@ -331,13 +349,11 @@ nav a {
     <div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus.</p>
     </div>
-    <!--      -->
-    <div>
-        <object data="./html5.svg" type=""></object>
-        <object data="./css.svg" type=""></object>
-        <object data="./js.svg" type=""></object>
+    <div id="legal">
+        <object type="image/svg+xml" data="./html5.svg" type=""></object>
+        <object type="image/svg+xml" data="./css.svg" type=""></object>
+        <object type="image/svg+xml" data="./js.svg" type=""></object>
     </div>
-
     <!-- / module -->
 
 </footer>
@@ -346,46 +362,47 @@ nav a {
 
 
 <script>
-    class RandomBackgroundColor {
-  constructor(elementSelector) {
-    this.elements = document.querySelectorAll(elementSelector);
-    this.colors = ['#f4f1de', '#e07a5f', '#3d405b', '#81b29a', '#f2cc8f', '#6d597a', '#e56b6f'];
-  }
-
-  getRandomColor() {
-    return this.colors[Math.floor(Math.random() * this.colors.length)];
-  }
-
-  applyRandomColor() {
-    this.elements.forEach((element) => {
-      const level = this.getLevel(element);
-      if (level === 3) {
-        element.style.backgroundColor = this.getRandomColor();
-      }
-    });
-  }
-
-  getLevel(element) {
-    let level = 1;
-    let parent = element.parentNode;
-    while (parent !== null) {
-      if (parent.tagName.toLowerCase() !== 'html') {
-        level++;
-        parent = parent.parentNode;
-      } else {
-        break;
-      }
+class RandomBackgroundColor {
+    constructor(elementSelector) {
+      this.elements = document.querySelectorAll(elementSelector);
+      this.colors = ['#f4f1de', '#e07a5f', '#3d405b', '#81b29a', '#f2cc8f', '#6d597a', '#e56b6f'];
     }
-    return level;
+  
+    getRandomColor() {
+      return this.colors[Math.floor(Math.random() * this.colors.length)];
+    }
+  
+    applyRandomColor() {
+      this.elements.forEach((element) => {
+        const level = this.getLevel(element);
+        if (level === 3) {
+          element.style.backgroundColor = this.getRandomColor();
+        }
+      });
+    }
+  
+    getLevel(element) {
+      let level = 1;
+      let parent = element.parentNode;
+      while (parent !== null) {
+        if (parent.tagName.toLowerCase() !== 'html') {
+          level++;
+          parent = parent.parentNode;
+        } else {
+          break;
+        }
+      }
+      return level;
+    }
   }
-}
 
+// export default RandomBackgroundColor;
+  
 // Usage example:
-const randomBgColor = new RandomBackgroundColor('body * ');
-randomBgColor.applyRandomColor();
-
+// const randomBgColor = new RandomBackgroundColor('body * ');
+// randomBgColor.applyRandomColor();
+  
 </script>
-
 
 
 
