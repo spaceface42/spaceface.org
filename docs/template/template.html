@@ -18,7 +18,7 @@
             --space: 1rem;
             --corner: 0.5rem;
             --stage-width: calc( 100vw - 2 * var(--space));
-            --main-bg-color: rgb(240, 240, 240);
+            --main-bg-color: hsl(0, 0%, 96%);
         }
 
         .stage {
@@ -41,6 +41,11 @@
             height: auto;
         }
 
+        /**/
+        body {
+            scroll-snap-type: x proximity;
+        }
+        
         /*****************************************************************/
         /**
          * @note CSS LAYOUT
@@ -244,6 +249,7 @@ nav a {
 
     <!-- module -->
     <style>
+    /* flex level 02 parent */
     footer {
         display: flex;
         flex-wrap: wrap;
@@ -253,7 +259,8 @@ nav a {
         font-size: 12px;
     }
 
-    footer div {
+    /* all direct children of footer */
+    footer > * {
         padding: var(--space);
         min-width: content;
         flex: 1 1 content;
@@ -272,9 +279,9 @@ nav a {
         gap: 12rem;
     }
 
-    /* child / icon row */
-    #legal * {
-        width: 60px;
+    /* child / footer _div_ object / icon row */
+    #legal > * {
+        width: 40px;
     }
 
     </style>
