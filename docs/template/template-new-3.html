@@ -138,53 +138,7 @@
                     position: absolute;
                 }
             </style>
-            <script>// Cache DOM queries
-                const mouseOverContainer = document.getElementById("stage");
-                const ex1Layer = document.getElementById("layer");
-                
-                // Define constraints
-                const constrain = 500;
-                
-                // Calculate transforms based on mouse position
-                function calculateTransforms(x, y, el) {
-                    const box = el.getBoundingClientRect();
-                    const calcX = -(y - box.y - (box.height / 2)) / constrain;
-                    const calcY = (x - box.x - (box.width / 2)) / constrain;
-                
-                    return `perspective(100px) rotateX(${calcX}deg) rotateY(${calcY}deg)`;
-                }
-                
-                // Apply transform to the element
-                function applyTransform(el, xyEl) {
-                    const [x, y] = xyEl;
-                    el.style.transform = calculateTransforms(x, y, el);
-                }
-                
-                // Debounce the mousemove event handler
-                function debounce(func, delay) {
-                    let timeoutId;
-                    return function() {
-                        const context = this;
-                        const args = arguments;
-                        clearTimeout(timeoutId);
-                        timeoutId = setTimeout(() => {
-                            func.apply(context, args);
-                        }, delay);
-                    };
-                }
-                
-                // Update transform on mouse move with debounced handler
-                mouseOverContainer.addEventListener('mousemove', debounce(function(e) {
-                    const xy = [e.clientX, e.clientY];
-                    const position = xy.concat([ex1Layer]);
-                
-                    // Apply transform with debounce
-                    window.requestAnimationFrame(function(){
-                        applyTransform(ex1Layer, position);
-                    });
-                }, 10)); // Adjust debounce delay as needed
-                
-            </script>
+
         </div>
 
     </div>
@@ -196,28 +150,59 @@
 <!------------------------------------ module ------------------------------------>
 <section class="cover">
 
-<script>
 
-document.addEventListener("mousemove", parallax);
-
-function parallax(event) {
-    requestAnimationFrame(() => {
-        this.querySelectorAll(".mouse").forEach((shift) => {
+    <script type="text/javascript">
+        let constrain = 500;
+        let mouseOverContainer = document.getElementById("stage");
+        let ex1Layer = document.getElementById("ex1-layer");
+        
+        function transforms(x, y, el) {
+          let box = el.getBoundingClientRect();
+          let calcX = -(y - box.y - box.height / 2) / constrain;
+          let calcY = (x - box.x - box.width / 2) / constrain;
+        
+          return (
+            "perspective(100px) " +
+            "rotateX(" + calcX + "deg) " +
+            "rotateY(" + calcY + "deg) "
+          );
+        }
+        
+        function transformElement(el, xyEl) {
+          el.style.transform = transforms.apply(null, xyEl);
+        }
+        
+        function handleMouseMove(event) {
+          let x = (window.innerWidth - event.pageX) / 90;
+          let y = (window.innerHeight - event.pageY) / 90;
+        
+          document.querySelectorAll(".mouse").forEach((shift) => {
             const position = shift.getAttribute("value");
             if (!position || isNaN(position)) {
-                console.error("Invalid or missing 'value' attribute for element:", shift);
-                return; // Skip this element and proceed to the next one
+              console.error("Invalid or missing 'value' attribute for element:", shift);
+              return; // Skip this element and proceed to the next one
             }
-
-            const x = (window.innerWidth - event.pageX * position) / 90;
-            const y = (window.innerHeight - event.pageY * position) / 90;
-
+        
+            const translateX = x * position;
+            const translateY = y * position;
+        
             shift.style.transition = "transform 0.2s linear"; // Apply transition
-            shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
-        });
-    });
-}
-</script>
+            shift.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`;
+        
+            const xy = [event.clientX, event.clientY];
+            const positionArray = xy.concat([shift]);
+        
+            window.requestAnimationFrame(function () {
+              transformElement(shift, positionArray);
+            });
+          });
+        }
+        
+        document.addEventListener("mousemove", handleMouseMove);
+        
+        
+        
+            </script>
 
 <div class="mouse_move">
 
@@ -225,7 +210,7 @@ function parallax(event) {
     id="img1" 
     src="https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"
     class="mouse"
-    value="10" />
+    value="5" />
 
     <img 
     id="img2" 
@@ -237,7 +222,7 @@ function parallax(event) {
     id="img3" 
     src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png"
     class="mouse" 
-    value="-50" />
+    value="-3" />
 
 
 
