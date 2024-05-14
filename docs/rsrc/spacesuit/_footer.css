@@ -1,0 +1,38 @@
+
+
+
+/* @note FOOTER ****************************************************************/
+    /* flex level 02 parent */
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space);
+
+        padding: 3rem;
+        font-size: 12px;
+    }
+
+    /* all direct children of footer */
+    footer > * {
+        padding: var(--space);
+        min-width: content;
+        flex: 1 1 content;
+        /* flex-basis: content; */
+        /* flex-basis: content; Automatically size based on the flex item's content */
+        background-color: #ccc;
+        border-radius: var(--corner);
+    }
+    /* footer div:last-child */
+    /* it is also a flex child but also a flex parent */
+    /* #legal { */
+    /*  @note CSS footer last row */
+    footer div:last-child {
+        min-width: 100%;
+        flex-basis: 100%; /* @follow-up seems to be obsolete */
+        gap: 12rem;
+    }
+
+    /* child / footer _div_ object / icon row */
+    #legal > * {
+        width: 40px;
+    }

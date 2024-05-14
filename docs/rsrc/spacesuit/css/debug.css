@@ -1,0 +1,30 @@
+
+* {
+    
+}
+
+
+
+
+
+body {
+    
+}
+
+.stage {
+    background-color: #edede9;
+}
+
+header {
+    background-color: #e5989b;
+}
+
+main {
+    background-color: #ccc5b9;
+}
+
+footer {
+    background-color: #6d6875;
+    height: 600px;
+}
+

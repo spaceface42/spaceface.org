@@ -1,0 +1,10 @@
+/**
+ *
+ * spacesuit typo
+ *
+ */
+
+ body {
+    font: normal normal 400 1.15rem/1.5 monospace;
+    background-color: var(--main-bg-color);
+}

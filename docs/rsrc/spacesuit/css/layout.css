@@ -1,15 +1,76 @@
 /**
  *
- * spacesuit
+ * spacesuit layout
  *
  */
 
- * {
-  border: 1px solid magenta;
- }
+/**
+ * variables
+ */
+:root {
+    --space: 1rem;
+    --corner: 0.5rem;
 
- /**
-  *
-  * flex
-  *
-  */
+    --stage-width: calc( 100vw - 2 * var(--space));
+
+
+
+    --main-bg-color: hsl(0, 0%, 96%);
+}
+
+
+
+/**
+ *
+ * layout
+ *
+ */
+body {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    align-items: stretch;
+}
+
+/* header | flex child 1 */
+header {
+    flex: auto;
+    align-items: flex-start;
+}
+
+/* flex child 2 */
+main {
+    flex: 1 1 75%;
+}   
+
+/* flex child 3 */
+footer {
+    min-width: 100%;
+    flex-shrink: 1; /* maybe this is not required */
+}
+
+/**
+ * override for screen size
+ */
+@media (min-width: 900px) {
+    body {
+        flex-direction: row;
+    }
+}
+
+
+/* stage area */
+.stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-basis: auto;
+    width: var(--stage-width);
+    margin: var(--space);
+    height: 90vh;
+    height: 90dvh;
+    border-radius: var(--corner);
+}
+
+
