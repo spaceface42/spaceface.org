@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parallax Image Effect</title>
+<style>
+    #stage {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .parallax-img {
+        width: 100%;
+        max-width: 500px; /* Adjust as needed */
+        transition: transform 0.4s ease-out;
+    }
+</style>
+</head>
+<body>
+
+<!-- Stage representing the viewport -->
+<div id="stage"></div>
+
+<!-- Sample HTML structure with images -->
+<div class="container">
+    <div class="parallax-wrapper">
+        <img src="../../content/pix-400.png" alt="Image 1" class="parallax-img">
+    </div>
+    <div class="parallax-wrapper">
+        <img src="../../content/placeholder2.png" alt="Image 2" class="parallax-img">
+    </div>
+    <!-- Add more image elements as needed -->
+</div>
+
+<script>
+let constrain = 500;
+let mouseOverContainer = document.getElementById("stage");
+
+function transforms(x, y, el) {
+  let box = el.getBoundingClientRect();
+  let calcX = -(y - box.y - box.height / 2) / constrain;
+  let calcY = (x - box.x - box.width / 2) / constrain;
+
+  return (
+    "perspective(100px) " +
+    "rotateX(" + calcX + "deg) " +
+    "rotateY(" + calcY + "deg) "
+  );
+}
+
+function transformElement(el, xyEl) {
+  el.style.transform = transforms.apply(null, xyEl);
+}
+
+function handleMouseMove(event) {
+  let x = (window.innerWidth - event.pageX) / 90;
+  let y = (window.innerHeight - event.pageY) / 90;
+
+  document.querySelectorAll(".parallax-img").forEach((img) => {
+    const position = img.getAttribute("value");
+    if (!position || isNaN(position)) {
+      console.error("Invalid or missing 'value' attribute for element:", img);
+      return; // Skip this element and proceed to the next one
+    }
+
+    const translateX = x * position;
+    const translateY = y * position;
+
+    img.style.transition = "transform 0.2s linear"; // Apply transition
+    img.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`;
+
+    const xy = [event.clientX, event.clientY];
+    const positionArray = xy.concat([img]);
+
+    window.requestAnimationFrame(function () {
+      transformElement(img, positionArray);
+    });
+  });
+}
+
+document.addEventListener("mousemove", handleMouseMove);
+</script>
+
+</body>
+</html>

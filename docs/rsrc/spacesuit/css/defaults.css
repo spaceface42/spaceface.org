@@ -1,0 +1,68 @@
+/**
+ * Reset
+ */
+*,
+*::before,
+*::after{
+  margin:0;
+  padding:0;
+  box-sizing: inherit;
+}
+ 
+ 
+ 
+ /**
+  * Defaults
+  */
+ /**
+  * Enable smooth scrolling on the whole document
+  * and Disable smooth scrolling when users have prefers-reduced-motion enabled
+  */
+html {
+  scroll-behavior: smooth;
+}
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  box-sizing: border-box;
+}
+
+
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+
+/* responsive images */
+img {
+  font-style: italic;
+  display: block;
+  background: no-repeat;
+  background-size: cover; /* for lazy loading / the low res pic placeholder */
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+
+
+ 
+
+
+
+
+
+
+
