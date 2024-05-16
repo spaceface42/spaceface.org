@@ -42,6 +42,12 @@ revork <pre> elements, these are animated by the observer, but I need to rework 
 
 
 #### to implement if needed
+
+css custom props
+https://www.youtube.com/watch?v=XGKj4HtIcGo
+
+
+
 in html: <a aria-current='page'
 in css: nav a[aria-current='page'] {}
 https://www.youtube.com/watch?v=lWu5zf_S9R4&t=183s

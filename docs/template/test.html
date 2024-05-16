@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Mouse Move Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow: hidden; /* Ensure no scrollbar appears */
+        }
+
+        #stage {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .observe {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            transition: transform 0.1s ease-out;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="stage">
+        <div class="container">
+            <img src="https://via.placeholder.com/200" alt="Sample Image 1" class="observe">
+            <img src="https://via.placeholder.com/200" alt="Sample Image 2" class="observe">
+            <img src="https://via.placeholder.com/200" alt="Sample Image 3" class="observe">
+        </div>
+    </div>
+
+    <script>
+        class PromiseDom {
+            constructor(document = window.document) {
+                console.info('_42 / PromiseDom');
+                this.ready = new Promise((resolve) => {
+                    const state = document.readyState;
+                    if (state === 'interactive' || state === 'complete') {
+                        resolve();
+                    } else {
+                        const onDOMContentLoaded = () => {
+                            resolve();
+                            document.removeEventListener('DOMContentLoaded', onDOMContentLoaded);
+                        };
+                        document.addEventListener('DOMContentLoaded', onDOMContentLoaded, false);
+                    }
+                }).catch(error => {
+                    console.error('Error initializing PromiseDom:', error);
+                });
+            }
+        }
+
+        class PageInitializer {
+            constructor() {
+                this.promiseDom = new PromiseDom();
+                this.intersectionObserver = null;
+                this.mutationObserver = null;
+                this.images = new Set();
+                this.handleMouseMove = this.handleMouseMove.bind(this);
+                this.stage = document.getElementById('stage');
+            }
+
+            async init() {
+                await this.promiseDom.ready;
+                console.info('DOM is ready');
+                this.setupIntersectionObserver();
+                this.setupMutationObserver();
+                this.setupMouseMoveListener();
+            }
+
+            setupIntersectionObserver() {
+                const options = {
+                    root: null, // relative to document viewport
+                    rootMargin: '0px',
+                    threshold: 0.1 // trigger when 10% of the target is visible
+                };
+
+                this.intersectionObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            console.info('Image is visible:', entry.target);
+                            this.images.add(entry.target);
+                        } else {
+                            this.images.delete(entry.target);
+                        }
+                    });
+                }, options);
+
+                const targets = document.querySelectorAll('img.observe');
+                targets.forEach(target => this.intersectionObserver.observe(target));
+            }
+
+            setupMutationObserver() {
+                const config = { attributes: true, childList: true, subtree: true };
+
+                this.mutationObserver = new MutationObserver((mutations, observer) => {
+                    mutations.forEach(mutation => {
+                        console.info('Mutation detected:', mutation);
+                        if (mutation.type === 'childList') {
+                            mutation.addedNodes.forEach(node => {
+                                if (node.tagName === 'IMG' && node.classList.contains('observe')) {
+                                    this.intersectionObserver.observe(node);
+                                }
+                            });
+                            mutation.removedNodes.forEach(node => {
+                                if (node.tagName === 'IMG' && node.classList.contains('observe')) {
+                                    this.intersectionObserver.unobserve(node);
+                                    this.images.delete(node);
+                                }
+                            });
+                        }
+                    });
+                });
+
+                const targetNode = document.body;
+                this.mutationObserver.observe(targetNode, config);
+            }
+
+            setupMouseMoveListener() {
+                this.stage.addEventListener('mousemove', this.debounce(this.handleMouseMove, 10));
+            }
+
+            handleMouseMove(event) {
+                const mouseX = event.clientX;
+                const mouseY = event.clientY;
+
+                this.images.forEach(image => {
+                    const rect = image.getBoundingClientRect();
+                    const calcX = -(mouseY - rect.y - (rect.height / 2)) / 500;
+                    const calcY = (mouseX - rect.x - (rect.width / 2)) / 500;
+                    image.style.transform = `perspective(100px) rotateX(${calcX}deg) rotateY(${calcY}deg)`;
+                });
+            }
+
+            debounce(func, delay) {
+                let timeoutId;
+                return function() {
+                    const context = this;
+                    const args = arguments;
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
+                        func.apply(context, args);
+                    }, delay);
+                };
+            }
+
+            disconnectObservers() {
+                if (this.intersectionObserver) {
+                    this.intersectionObserver.disconnect();
+                    console.info('IntersectionObserver disconnected');
+                }
+
+                if (this.mutationObserver) {
+                    this.mutationObserver.disconnect();
+                    console.info('MutationObserver disconnected');
+                }
+
+                this.stage.removeEventListener('mousemove', this.handleMouseMove);
+                console.info('MouseMove listener removed');
+            }
+        }
+
+        const pageInitializer = new PageInitializer();
+        pageInitializer.init();
+    </script>
+</body>
+</html>

@@ -1,27 +1,33 @@
+/**
+ * 
+ * PromiseDom v07
+ * 
+ * PromiseDom class provides a promise that resolves when the DOM is ready.
+ * 
+ */
+
 class PromiseDom {
     /**
      * Initializes PromiseDom instance.
-     * @param document The document object to use. Default is window.document.
+     * @param {Document} [document=window.document] The document object to use. Default is window.document.
      */
     constructor(document = window.document) {
-        this.document = document;
         console.info('_42 / PromiseDom');
-        this.ready = new Promise((resolve, reject) => {
-            try {
-                const state = this.document.readyState;
-                if (state === 'interactive' || state === 'complete') {
+        this.ready = new Promise((resolve) => {
+            const state = document.readyState;
+            if (state === 'interactive' || state === 'complete') {
+                resolve();
+            } else {
+                const onDOMContentLoaded = () => {
                     resolve();
-                }
-                else {
-                    this.document.addEventListener('DOMContentLoaded', () => resolve(), false);
-                }
+                    document.removeEventListener('DOMContentLoaded', onDOMContentLoaded);
+                };
+                document.addEventListener('DOMContentLoaded', onDOMContentLoaded, false);
             }
-            catch (error) {
-                console.error('Error initializing PromiseDom:', error);
-                reject(new Error('Failed to initialize PromiseDom'));
-            }
+        }).catch(error => {
+            console.error('Error initializing PromiseDom:', error);
         });
     }
 }
+
 export default PromiseDom;
-//# sourceMappingURL=PromiseDom.js.map
