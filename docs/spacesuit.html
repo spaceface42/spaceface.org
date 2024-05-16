@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="./rsrc/spacesuit/css/defaults.css" />
     <link rel="stylesheet" href="./rsrc/spacesuit/css/layout.css" />
-    <link rel="stylesheet" href="./rsrc/spacesuit/css/spaceface.css" />
 
     <link rel="stylesheet" href="./rsrc/spacesuit/css/debug.css" />
     
@@ -21,53 +20,53 @@
 
 
 
-<div class="scroll-icon">
-    <style>
-    .scroll-icon {
-        position: absolute;
-        height: 10vh;
-        height: 10dvh;
-        display: flex;
-        justify-content: center;
-        justify-content: space-evenly;
-        justify-content: flex-start;
-        align-items: center;
-        font-size: 0.75rem;
-        bottom: calc(10vh - 1rem);
-    }
-    .scroll-icon::before {
-        content: '';
-        position: absolute;
-    }
-    .hint {
-        margin: 1rem;
-        font-weight: bold;
-    }
-    .line-container {
-        width: 2px;
-        height: 100%;
-        position: relative;
-        background-color: lightgray;
-    }
-    .line {
-        position: absolute;
-        width: 2px;
-        height: 0px;
-        background-color: tomato;
-        top: 0;
-        bottom: initial;
-        animation: line-animation 2.5s ease-in-out 0s infinite normal; 
-    }
-    @keyframes line-animation {
-        0% {height: 0px; top: 0px;}
-        50% {height: 100%; top: 0px;}
-        100% {height: 0px; top: 100%;}
-    }
-    </style>
-    <div class="line-container">
-        <div class="line"></div>
+    <!--------------------------------- scroll-icon --------------------------------->
+    <div class="scroll-icon">
+        <style>
+        .scroll-icon {
+            position: absolute;
+            height: 10vh;
+            height: 10dvh;
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 0.75rem;
+            bottom: calc(10vh - 1rem);
+        }
+        .scroll-icon::before {
+            /* content: ''; */
+            /* position: absolute; */
+        }
+        .line-container {
+            width: 2px;
+            height: 100%;
+            position: relative;
+            background-color: lightgray;
+        }
+        .line {
+            /* position: absolute; */
+            width: 2px;
+            height: 0px;
+            background-color: tomato;
+            top: 0;
+            bottom: initial;
+            animation: line-animation 2.5s ease-in-out 0s infinite normal; 
+        }
+        @keyframes line-animation {
+            0% {height: 0px; top: 0px;}
+            50% {height: 100%; top: 0px;}
+            100% {height: 0px; top: 100%;}
+        }
+        </style>
+        <div class="line-container">
+            <div class="line"></div>
+        </div>
     </div>
-</div>
+    <!--------------------------------- scroll-icon --------------------------------->
+
+
 
 </aside>
 <!------------------------------------ stage ------------------------------------>
@@ -82,18 +81,22 @@
 
 
 
+<div class="logoholder">logoholder longer</div>
+
+
+
 <!------------------------------------ main ------------------------------------>
 <main>
     <article class="project">
-        <img src="../content/placeholder-1920x300.png" alt="placeholder image" />
+        <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
     </article>
 
     <article class="project">
-        <img src="../content/placeholder-1920x300.png" alt="placeholder image" />
+        <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
     </article>
 
     <article class="project">
-        <img src="../content/placeholder-1920x300.png" alt="placeholder image" />
+        <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
     </article>
 </main>
 <!------------------------------------ main ------------------------------------>
@@ -106,6 +109,13 @@ footer
 </footer>
 <!------------------------------------ footer ------------------------------------>
 
+
+
+<!------------------------------------ script ------------------------------------>
+<script>
+
+</script>
+<!------------------------------------ script ------------------------------------>
 
 
 
