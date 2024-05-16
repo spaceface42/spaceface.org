@@ -5,86 +5,108 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Parallax Image Effect</title>
 <style>
-    #stage {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-    }
+body {
+  background-color: rgb(131, 134, 134);
+  height: 100vh;
+  padding: 1rem;
+}
 
-    .parallax-img {
-        width: 100%;
-        max-width: 500px; /* Adjust as needed */
-        transition: transform 0.4s ease-out;
-    }
+#stage {
+  background-color: rgb(221, 222, 222);
+  height: 200vh; /* Increased height to enable scrolling */
+  width: 100vw;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows multiple rows of boxes */
+  overflow: scroll;
+}
+.box {
+  border: 2px solid red;
+  height: 100px;
+  width: 100px;
+  transition: transform 0.3s ease-out; /* Transition for easing effect */
+  margin: 10px;
+}
 </style>
 </head>
 <body>
 
 <!-- Stage representing the viewport -->
-<div id="stage"></div>
+<div id="stage">
 
-<!-- Sample HTML structure with images -->
-<div class="container">
-    <div class="parallax-wrapper">
-        <img src="../../content/pix-400.png" alt="Image 1" class="parallax-img">
-    </div>
-    <div class="parallax-wrapper">
-        <img src="../../content/placeholder2.png" alt="Image 2" class="parallax-img">
-    </div>
-    <!-- Add more image elements as needed -->
+  <div class="box">qweqwe</div>
+
+  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>
+
+  <div class="box">qweqwe</div>
+  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>
+
+  <div class="box">qweqwe</div>
+  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>
+
+  <div class="box">qweqwe</div>
+
+  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>
+
+  <div class="box">qweqwe</div>
+
+  <div class="box">qweqwe</div>
+
 </div>
 
 <script>
-let constrain = 500;
+let constraint = 20;
 let mouseOverContainer = document.getElementById("stage");
+let boxes = document.getElementsByClassName("box");
+let visibleBoxes = new Set();
 
 function transforms(x, y, el) {
   let box = el.getBoundingClientRect();
-  let calcX = -(y - box.y - box.height / 2) / constrain;
-  let calcY = (x - box.x - box.width / 2) / constrain;
-
-  return (
-    "perspective(100px) " +
-    "rotateX(" + calcX + "deg) " +
-    "rotateY(" + calcY + "deg) "
-  );
+  let calcX = -(y - box.y - (box.height / 2)) / constraint;
+  let calcY = (x - box.x - (box.width / 2)) / constraint;
+  
+  return "perspective(500px) "
+    + "rotateX(" + calcX + "deg) "
+    + "rotateY(" + calcY + "deg)";
 }
 
 function transformElement(el, xyEl) {
-  el.style.transform = transforms.apply(null, xyEl);
+  el.style.transform = transforms(xyEl[0], xyEl[1], el);
 }
 
-function handleMouseMove(event) {
-  let x = (window.innerWidth - event.pageX) / 90;
-  let y = (window.innerHeight - event.pageY) / 90;
-
-  document.querySelectorAll(".parallax-img").forEach((img) => {
-    const position = img.getAttribute("value");
-    if (!position || isNaN(position)) {
-      console.error("Invalid or missing 'value' attribute for element:", img);
-      return; // Skip this element and proceed to the next one
-    }
-
-    const translateX = x * position;
-    const translateY = y * position;
-
-    img.style.transition = "transform 0.2s linear"; // Apply transition
-    img.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`;
-
-    const xy = [event.clientX, event.clientY];
-    const positionArray = xy.concat([img]);
-
-    window.requestAnimationFrame(function () {
-      transformElement(img, positionArray);
+if (mouseOverContainer && boxes.length > 0) {
+  mouseOverContainer.onmousemove = function(e) {
+    let xy = [e.clientX, e.clientY];
+    visibleBoxes.forEach(box => {
+      let position = xy.concat([box]);
+      window.requestAnimationFrame(function() {
+        transformElement(box, position);
+      });
     });
-  });
+  };
 }
 
-document.addEventListener("mousemove", handleMouseMove);
-</script>
+let observerOptions = {
+  root: null, // Use the viewport as the root
+  rootMargin: "0px",
+  threshold: 0.1 // Trigger when at least 10% of the element is visible
+};
 
+let observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      visibleBoxes.add(entry.target);
+    } else {
+      visibleBoxes.delete(entry.target);
+    }
+  });
+}, observerOptions);
+
+Array.from(boxes).forEach(box => {
+  observer.observe(box);
+});
+</script>
 </body>
 </html>
