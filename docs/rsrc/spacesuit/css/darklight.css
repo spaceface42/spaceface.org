@@ -1,0 +1,26 @@
+
+
+
+
+
+
+
+
+:root {
+    color-scheme: dark light;
+}
+
+header {
+    color: hsl(192, 41%, 65%)
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    header {
+        color: white;
+        background-color: darkgrey;
+    }
+}
+
+

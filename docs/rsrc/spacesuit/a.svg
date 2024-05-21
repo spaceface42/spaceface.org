@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="-64 -64 128 128">
+   <title>Squircle: x to 4th plus y to 4th equals radius to 4th, compared with rounded square.</title>
+    <filter id="f_multiply">
+      <feBlend in="SourceGraphic" mode="color-trans"/>
+   </filter>
+    <!-- identity matrix -->
+    <filter id="colorMeTheSame">
+        <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 1 0" />
+    </filter>
+   <g filter="url(#colorMeTheSame)" fill="rgba(255,99,71,0.749)" stroke-width="0">
+      <path stroke="rgba(252,11,71,0.5)"
+         d="M0,62
+            C13,62,34,62,48,48
+            C62,34,62,13,62,0
+            C62,-13,62,-34,48,-48
+            C34,-62,13,-62,0,-62
+            C-13,-62,-34,-62,-48,-48
+            C-62,-34,-62,-13,-62,0
+            C-62,13,-62,34,-48,48
+            C-34,62,-13,62,0,62Z"/>
+   </g>
+</svg>

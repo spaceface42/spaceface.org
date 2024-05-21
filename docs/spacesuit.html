@@ -8,7 +8,6 @@
     <meta name="color-sheme" content="dark light" />
 
     <link rel="stylesheet" href="./rsrc/spacesuit/css/defaults.css" />
-    <link rel="stylesheet" href="./rsrc/spacesuit/css/darklight.css" />
     <link rel="stylesheet" href="./rsrc/spacesuit/css/layout.css" />
 
     <link rel="stylesheet" href="./rsrc/spacesuit/css/debug.css" />
@@ -78,13 +77,32 @@
 
 <!------------------------------------ header ------------------------------------>
 <header>
-    <nav>nav</nav>
+    <!-- nav -->
+    <nav>
+        <a href="#">home</a>
+        <a href="#">work</a>
+        <a href="#">contact</a>
+    </nav>
+    <style>
+        nav {
+            display: block;
+        }
+        header a {
+            display: block;
+        }
+    </style>
+    <!-- / nav -->
 </header>
 <!------------------------------------ header ------------------------------------>
 
 
 
-<div class="logoholder">logoholder longer</div>
+<div class="logoholder">
+    <picture title="spaceface-logo">
+        <source sizes="100%" srcset="./rsrc/spacesuit/a.svg" media="(orientation:landscape)" />
+        <img width="100%" src="./rsrc/spacesuit/a.svg" />
+    </picture>
+</div>
 
 
 

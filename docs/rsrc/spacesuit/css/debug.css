@@ -1,9 +1,27 @@
 
-* * * {
-    /* border: 1px dotted magenta; */
+* * *:hover {
+    background-image: url('../../../skin/selection-marching-ants.svg') !important;
+}
+
+* * *:hover > img {
+    opacity: 0.5;
 }
 
 
+
+
+
+/*
+*::before {
+    position: absolute;
+}
+
+*:hover::before {
+    content: "asas";
+    
+}
+
+*/
 
 
 
@@ -16,7 +34,7 @@ body {
 }
 
 header {
-    background-color: #e5989b;
+
 }
 
 main {
@@ -31,10 +49,7 @@ footer {
 
 
 .logoholder {
-    background-color: #7f8aa5;
-    opacity: .5;
     margin: -2rem;
     border-radius: 0.3rem;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
-
+    z-index: 2;
 }
