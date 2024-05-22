@@ -31,7 +31,7 @@ body {
 }
 
 .stage {
-    /* background-color: #edede9; */
+    background-color: var(--bg-color-white);
 }
 
 header {
@@ -39,7 +39,7 @@ header {
 }
 
 main {
-    /* background-color: #ccc5b9; */
+    
 }
 
 footer {
@@ -49,8 +49,3 @@ footer {
 
 
 
-.logoholder {
-    margin: -2rem;
-    border-radius: 0.3rem;
-    z-index: 2;
-}

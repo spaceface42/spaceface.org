@@ -79,7 +79,7 @@
 <header>
     <!-- nav -->
     <nav>
-        <a href="#">home</a>
+        <a href="#">home 0</a>
         <a href="#">work</a>
         <a href="#">contact</a>
     </nav>
@@ -90,6 +90,7 @@
         header a {
             display: block;
             color: gray;
+            text-decoration: line-through red 5;
         }
     </style>
     <!-- / nav -->
@@ -98,25 +99,42 @@
 
 
 
+<!---------------------------------- logoholder ---------------------------------->
 <div class="logoholder">
     <style>
         .logoholder {
             width: 128px;
+            margin: -2rem;
+            z-index: 2;
+        }
+        .logoholder picture {
+            position: fixed;
+            top: 30px;
         }
     </style>
     <picture title="spaceface-logo">
-        <source sizes="100%" srcset="./rsrc/spacesuit/spaceface-logo.svg" media="(orientation:landscape)" />
-        <img width="100%" src="./rsrc/spacesuit/spaceface-logo.svg" />
+        <source sizes="100%" srcset="./rsrc/spacesuit/spaceface-logo-3.svg" media="(orientation:landscape)" />
+        <img width="100%" src="./rsrc/spacesuit/spaceface-logo-3.svg" />
     </picture>
 </div>
+<!---------------------------------- logoholder ---------------------------------->
 
 
 
 <!------------------------------------ main ------------------------------------>
 <main>
-    <article class="project">
-        <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
-    </article>
+    <style>
+
+        main {
+
+        }
+        article {
+            padding: 6rem;
+            margin: 3rem 0 0 0;
+            background-color: var(--bg-color-white);
+            border-radius: 1rem;
+        }
+    </style>
 
     <article class="project">
         <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
@@ -125,6 +143,11 @@
     <article class="project">
         <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
     </article>
+
+    <article class="project">
+        <img src="./content/placeholder-1920x300.png" alt="placeholder image" />
+    </article>
+
 </main>
 <!------------------------------------ main ------------------------------------>
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="meet" viewBox="0 0 620 620">
+    <title>spaceface logo</title>
+    <style>
+        path {}
+        #spaceface-logo-background path {
+            fill: rgba(145, 143, 157, 0.286);
+        }
+        #spaceface-logo-sign path {
+            fill: none;
+            stroke: tomato;
+            stroke-width: 12px;
+        }
+    </style>
+
+    <!-- background -->
+    <g id="spaceface-logo-background">
+        <path d="
+            M 310,  615
+            C 376,  615,  481,  615,  548,  548
+            C 615,  481,  615,  376,  615,  310
+            C 615,  244,  615,  139,  548,   72
+            C 481,    5,  376,    5,  310,    5
+            C 244,    5,  139,    5,   72,   72
+            C   5,  139,    5,  244,    5,  310
+            C   5,  376,    5,  481,   72,  548
+            C 139,  615,  244,  615,  310,  615 Z" />
+    </g>
+    <!-- / background -->
+
+    <!-- sign -->
+    <g id="spaceface-logo-sign">
+        <path d="
+            M 160 110 L 510 110
+            M 160 110 a 1 1 0 0 0 0 100
+            M 160 210 L 460 210
+            M 460 210 a 1 1 0 0 1 0 100
+            M 160 310 L 460 310
+            M 160 310 a 1 1 0 0 0 0 100
+            M 160 410 L 460 410
+            M 460 410 a 1 1 0 0 1 0 100
+            M 110 510 L 460 510
+        " />
+    </g>
+    <!-- / sign -->
+
+</svg>
