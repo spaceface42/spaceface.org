@@ -1,6 +1,7 @@
 
 * * *:hover {
     background-image: url('../marching-ants.svg') !important;
+    background-color: rgba(255, 99, 71, 0.112);
 }
 
 * * *:hover > img {
@@ -30,7 +31,7 @@ body {
 }
 
 .stage {
-    background-color: #edede9;
+    /* background-color: #edede9; */
 }
 
 header {
@@ -38,11 +39,11 @@ header {
 }
 
 main {
-    background-color: #ccc5b9;
+    /* background-color: #ccc5b9; */
 }
 
 footer {
-    background-color: #6d6875;
+    /* background-color: #6d6875; */
     height: 600px;
 }
 
