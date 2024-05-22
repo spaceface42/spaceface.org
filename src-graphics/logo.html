@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+<!--  
+    <svg height="210" width="400" xmlns="http://www.w3.org/2000/svg">
+        <title>main-logo</title>
+        <style>
+            path {
+                fill: none;
+                stroke: tomato;
+                stroke-width: 2px;
+            }
+        </style>
+        <path d="M30 30 L215 30" />
+        <path d="M 30 30 a 1 1 0 0 0 0 30" />
+        <path d="M30 60 L200 60" />
+        <path d="M 200 60 a 1 1 0 0 1 0 30" />
+        <path d="M30 90 L200 90" />
+        <path d="M 30 90 a 1 1 0 0 0 0 30" />
+        <path d="M30 120 L200 120" />
+        <path d="M 200 120 a 1 1 0 0 1 0 30" />
+        <path d="M15 150 L200 150" />
+    </svg>
+   --> 
+    
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="-310 -310 620 620">
+    <title>logo-background</title>
+    <style>
+        path {
+            fill: none;
+            stroke: tomato;
+            stroke-width: 2px;
+        }
+    </style>
+    <filter id="f_multiply">
+       <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+    <g filter="url(#f_multiply)">
+        <path d="
+            M   0,  305
+            C  66,  305,  171,  305,  238,  238
+            C 305,  171,  305,   66,  305,    0
+            C 305,  -66,  305, -171,  238, -238
+            C 171, -305,   66, -305,    0, -305
+            C -66, -305, -171, -305, -238, -238
+            C -305,-171, -305,  -66, -305,    0
+            C -305,  66, -305,  171, -238,  238
+            C -171, 305, -66,   305,    0,  305 Z
+        "/>
+    </g>
+ </svg>
+ 
+
+
+
+<style>
+    #svgholder {
+        width: 620px;
+        height: 620px;
+        background-color: rgba(128, 128, 128, 0.207);
+    }
+
+</style>
+
+
+
+
+
+<div id="svgholder">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="620" viewBox="0 0 620 620">
+    <title>spaceface logo</title>
+    <style>
+        path {
+            fill: none;
+            stroke: tomato;
+            stroke-width: 6px;
+        }
+    </style>
+    <filter id="f_multiply">
+       <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+    <g filter="url(#f_multiply)">
+        <!-- sign -->
+        <!-- path  1 --><path d="M 160 110 L 510 110" />
+        <!-- curve 1 --><path d="M 160 110 a 1 1 0 0 0 0 100" />
+        <!-- path  2 --><path d="M 160 210 L 460 210" />
+        <!-- curve 2 --><path d="M 460 210 a 1 1 0 0 1 0 100" />
+        <!-- path  3 --><path d="M 160 310 L 460 310" />
+        <!-- curve 3 --><path d="M 160 310 a 1 1 0 0 0 0 100" />
+        <!-- path  4 --><path d="M 160 410 L 460 410" />
+        <!-- curve 4 --><path d="M 460 410 a 1 1 0 0 1 0 100" />
+        <!-- path  5 --><path d="M 110 510 L 460 510" />
+        <!-- / sign -->
+        <!-- background -->
+        <path d="
+        M 310,  615
+        C 376,  615,  481,  615,  548,  548
+        C 615,  481,  615,  376,  615,  310
+        C 615,  244,  615,  139,  548,   72
+        C 481,    5,  376,    5,  310,    5
+        C 244,    5,  139,    5,   72,   72
+        C   5,  139,    5,  244,    5,  310
+        C   5,  376,    5,  481,   72,  548
+        C 139,  615,  244,  615,  310,  615 Z" />
+        <!-- / background -->
+    </g>
+</svg>
+
+</div>
+
+
+
+
+
+<object data="./logo.svg" type=""></object>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 
 * * *:hover {
-    background-image: url('../../../skin/selection-marching-ants.svg') !important;
+    background-image: url('../marching-ants.svg') !important;
 }
 
 * * *:hover > img {
