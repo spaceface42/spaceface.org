@@ -105,9 +105,9 @@ footer {
 }
 
  body {
-    /* font: normal normal 400 1.15rem/1.5 monospace; */
+    font: normal normal 400 1.15rem/1.5 monospace;
     font-family: ModernEraMono, Consolas, Arial, sans-serif;
-    font-weight: 400;
+    /* font-weight: 400; */
     background-color: var(--main-bg-color);
 }
 
