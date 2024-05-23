@@ -1,31 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" version="1.2" viewBox="0 0 8 8">
-<style>
-
-#checkerboard rect {
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <style>
+  pattern rect {
     fill: white;
-    stroke: none;
-    width: 4px;
-    height: 4px;
-}
-
-rect.gray {
-    background: #cdcccb;
-}
-
-path {
-    stroke: magenta;
-}
-
-
-</style>
-<g id="checkerboard">
-  <!--
-  <rect width="4" height="4" />
-  <rect class="gray" x="4" width="4" height="4" />
-  <rect y="4" width="4" height="4" />
-  <rect class="gray" x="4" y="4" width="4" height="4" />
--->
-   <path d="M 0 0 L 4 0 M 4 4 L 0 4" />
-</g>
+  }
+  pattern .odd {
+    fill: #cccccc;
+  }
+  </style>
+  <defs>
+    <pattern id="checkerboard" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" />
+      <rect x="4" y="4" width="4" height="4" />
+      <rect class="odd" x="4" width="4" height="4" />
+      <rect class="odd" y="4" width="4" height="4" />
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#checkerboard)" />
 </svg>

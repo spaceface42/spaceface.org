@@ -10,9 +10,9 @@
   padding:0;
   box-sizing: inherit;
 }
- 
- 
- 
+
+
+
  /**
   * Defaults
   */
@@ -46,19 +46,21 @@ body {
 
 
 
-
-
-/* responsive images */
+/**
+ * utils
+ * img / responsive images
+ * 1. ensures that the image does not exceed its container's width
+ * 2. while maintaining its aspect ratio with
+ */
 img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  background: no-repeat;
+  max-width: 100%; /* 1 */
+  height: auto;    /* 2 */
+  /* background: no-repeat; */
   /* for lazy loading / the low res pic placeholder */
   /* background-size: cover; */
-
   /* vertical-align: middle; */
   /* font-style: italic; */
+  /* display: block; */
 }
 
 

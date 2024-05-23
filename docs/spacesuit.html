@@ -20,7 +20,21 @@
 <!------------------------------------ stage ------------------------------------>
 <aside class="stage">
 
-
+    <div class="layer">
+        <style>
+            .layer {
+                width: 12vw;
+                height: 55vh;
+                border-radius: 1rem;
+                position: absolute;
+                top: 32vh;
+                left: 22vw;
+                background: url('./rsrc/spacesuit/layer.svg');
+                background-repeat: repeat;
+                background-size: 8px 8px;
+            }
+        </style>
+    </div>
 
     <!--------------------------------- scroll-icon --------------------------------->
     <div class="scroll-icon">
@@ -108,8 +122,9 @@
             z-index: 2;
         }
         .logoholder picture {
+            width: 20vw;
             position: fixed;
-            top: 30px;
+            top: 15vh;
         }
     </style>
     <picture title="spaceface-logo">
