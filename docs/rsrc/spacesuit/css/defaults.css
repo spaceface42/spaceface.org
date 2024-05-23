@@ -50,13 +50,15 @@ body {
 
 /* responsive images */
 img {
-  font-style: italic;
   display: block;
-  background: no-repeat;
-  background-size: cover; /* for lazy loading / the low res pic placeholder */
   max-width: 100%;
   height: auto;
+  background: no-repeat;
+  /* for lazy loading / the low res pic placeholder */
+  /* background-size: cover; */
+
   /* vertical-align: middle; */
+  /* font-style: italic; */
 }
 
 
