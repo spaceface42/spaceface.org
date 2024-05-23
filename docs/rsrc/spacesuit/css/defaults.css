@@ -53,8 +53,10 @@ body {
  * 2. while maintaining its aspect ratio with
  */
 img {
+  display: block;
   max-width: 100%; /* 1 */
   height: auto;    /* 2 */
+  vertical-align: middle;
   /* background: no-repeat; */
   /* for lazy loading / the low res pic placeholder */
   /* background-size: cover; */
