@@ -36,62 +36,7 @@
         </style>
     </div>
 
-    <div class="nightandday">
-        <input type="checkbox" id="switch" />
-        <label for="switch">Toggle</label>
-        <style>
 
-        .nightandday {
-            position: fixed;
-            top: 3rem;
-            right: 3rem;
-        }
-
-        input[type=checkbox] {
-        height: 0;
-        width: 0;
-        visibility: hidden;
-        }
-
-        label {
-        cursor: pointer;
-        text-indent: -9999px;
-        width: 3rem;
-        height: 1.5rem;
-        background: grey;
-        display: block;
-        border-radius: 100px;
-        position: relative;
-        }
-
-        label:after {
-        content: "";
-        position: absolute;
-        top: 0.25rem;
-        left: 0.25rem;
-        width: 1rem;
-        height: 1rem;
-        background: #fff;
-        border-radius: 90px;
-        transition: 0.5s;
-        }
-
-        input:checked + label {
-        background: #bada55;
-        }
-
-        input:checked + label:after {
-        left: calc(100% - 5px);
-        transform: translateX(-100%);
-        }
-
-        label:active:after {
-        width: 80px;
-        }
-
-        </style>
-    </div>
-    
 
     <!--------------------------------- scroll-icon --------------------------------->
     <div class="scroll-icon">
@@ -152,19 +97,34 @@
 <header>
     <!-- nav -->
     <nav>
-        <a href="#">home 0</a>
+        <a href="#">home</a>
         <a href="#">work</a>
         <a href="#">contact</a>
     </nav>
     <style>
         nav {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
         }
         header a {
-            display: block;
-            color: gray;
-            text-decoration: line-through red 5;
+            display: inline-block;
+            margin: 1rem;
+            padding: 0.4rem 2rem;
+            font-size: 0.85rem;
+            color: rgb(87, 87, 87);
+            text-transform: uppercase;
+            text-decoration: none;
+            background-color: white;
+            border-radius: 9999px;
+            transition: all 250ms linear;
         }
+
+        header a:hover {
+            color: white;
+            background-color: black;
+        }
+
     </style>
     <!-- / nav -->
 </header>
@@ -187,8 +147,8 @@
         }
     </style>
     <picture title="spaceface-logo">
-        <source sizes="100%" srcset="./rsrc/spacesuit/spaceface-logo-3.svg" media="(orientation:landscape)" />
-        <img width="100%" src="./rsrc/spacesuit/spaceface-logo-3.svg" />
+        <source sizes="100%" srcset="./rsrc/spacesuit/spaceface-logo.svg" media="(orientation:landscape)" />
+        <img width="100%" src="./rsrc/spacesuit/spaceface-logo.svg" />
     </picture>
 </div>
 <!---------------------------------- logoholder ---------------------------------->

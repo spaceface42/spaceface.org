@@ -1,7 +1,14 @@
+* * * {
+    transition: all 0.6s 150ms ease-in;
+}
 
 * * *:hover {
-    background: rgba(255, 99, 71, 0.112) url('../marching-ants.svg');
+    /* background: rgba(255, 99, 71, 0.112) url('../marching-ants.svg'); */
     background-size: 100% 100%; 
+    background-repeat: no-repeat;
+
+    animation: backgroundIMG 0.3s ease-in-out 3s;
+    animation-fill-mode: forwards;
 
 /*
     background: rgba(255, 99, 71, 0.112) url('../marching-ants.svg') no-repeat center center;
@@ -10,7 +17,11 @@
 
 }
 
-
+@keyframes backgroundIMG {
+    100% {
+        background-image: url('../marching-ants.svg');
+    }
+  }
 
 
 
