@@ -43,6 +43,8 @@ revork <pre> elements, these are animated by the observer, but I need to rework 
 
 #### to implement if needed
 
+https://www.youtube.com/watch?v=nMYM5_svGLM
+
 css custom props
 https://www.youtube.com/watch?v=XGKj4HtIcGo
 
