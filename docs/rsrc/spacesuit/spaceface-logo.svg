@@ -10,6 +10,7 @@
             fill: none;
             stroke: tomato;
             stroke-width: 12px;
+            opacity: 0.5;
         }
     </style>
     <filter id="invert">
@@ -21,14 +22,14 @@
                 "/>
     </filter>
 
-  <filter id="filter">
-    <feColorMatrix
-      type="matrix"
-      values=" 0.311  0.414  0.062  0.020  0.226 
-               0.042  0.368  0.294  0.015  0.222 
-               0.271  1.050  0.252  0.262  0.468 
-               0.000  1.000  1.000  65.00  0.000">
-    </feColorMatrix>
+    <filter id="filter">
+        <feColorMatrix
+        type="matrix"
+        values=" 0.311  0.414  0.062  0.020  0.226 
+                0.042  0.368  0.294  0.015  0.222 
+                0.271  1.050  0.252  0.262  0.468 
+                0.000  1.000  1.000  65.00  0.000">
+        </feColorMatrix>
     </filter>
 
     <!-- background -->
@@ -48,7 +49,8 @@
     <!-- / background -->
 
     <!-- sign -->
-    <g id="spaceface-logo-sign" filter="url(#invert)">
+    <!-- filter="url(#invert) -->
+    <g id="spaceface-logo-sign">
         <path d="
             M 510 110 
             L 160 110 
@@ -65,12 +67,16 @@
     <!--
     M 510 110: Move to the starting point (510, 110).
     L 160 110: Draw a line to (160, 110).
+
     a 50 50 0 0 0 0 100: Draw an arc to create the downward curve.
     L 460 210: Draw a line to (460, 210).
+
     a 50 50 0 0 1 0 100: Draw an arc to create the upward curve.
     L 160 310: Draw a line to (160, 310).
+
     a 50 50 0 0 0 0 100: Draw an arc to create the downward curve.
     L 460 410: Draw a line to (460, 410).
+
     a 50 50 0 0 1 0 100: Draw an arc to create the upward curve.
     L 110 510: Draw the final horizontal line from (460, 510) to (110, 510).
     -->
