@@ -41,7 +41,7 @@ class FetchPartial {
             await Promise.allSettled(Array.from(partials).map(partial => {
                 const url = partial.getAttribute('href');
                 if (!url) {
-                    console.error('No URL provided for fetchAll');
+                    console.error('No URL provided for fetchAll on element:', partial);
                     return Promise.resolve();
                 }
                 return this.fetch(url, partial);
@@ -65,7 +65,7 @@ class FetchPartial {
             return response.text();
         }
         catch (error) {
-            console.error(`Error fetching partial from ${url}:`, error);
+            console.error(`Error making request to ${url}:`, error);
             throw error;
         }
     }
