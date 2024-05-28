@@ -12,6 +12,24 @@
             stroke-width: 12px;
         }
     </style>
+    <filter id="invert">
+        <feColorMatrix id="invert" in="SourceGraphic" type="matrix"
+            values="-1  0  0  0  1 
+                    0 -1  0  0  1 
+                    0  0 -1  0  1
+                    0  0  0  1  0
+                "/>
+    </filter>
+
+  <filter id="filter">
+    <feColorMatrix
+      type="matrix"
+      values=" 0.311  0.414  0.062  0.020  0.226 
+               0.042  0.368  0.294  0.015  0.222 
+               0.271  1.050  0.252  0.262  0.468 
+               0.000  1.000  1.000  65.00  0.000">
+    </feColorMatrix>
+    </filter>
 
     <!-- background -->
     <g id="spaceface-logo-background">
@@ -24,12 +42,13 @@
             C 244,    5,  139,    5,   72,   72
             C   5,  139,    5,  244,    5,  310
             C   5,  376,    5,  481,   72,  548
-            C 139,  615,  244,  615,  310,  615 Z" />
+            C 139,  615,  244,  615,  310,  615 Z
+        " />
     </g>
     <!-- / background -->
 
     <!-- sign -->
-    <g id="spaceface-logo-sign">
+    <g id="spaceface-logo-sign" filter="url(#invert)">
         <path d="
             M 510 110 
             L 160 110 
