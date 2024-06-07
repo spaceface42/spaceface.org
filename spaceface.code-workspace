@@ -16,6 +16,7 @@
         "html.trace.server": "verbose",
         "liveServer.settings.multiRootWorkspaceName": "spaceface.org",
         "liveServer.settings.port": 5501,
+        "liveServer.settings.port": 5502,
         "liveServer.settings.root": "/docs",
         "emmet.preferences": {},
         "editor.wordWrap": "on"
