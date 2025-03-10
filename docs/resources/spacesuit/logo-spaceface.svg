@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 620 620">
+
+  <!-- Generator: Adobe Illustrator 29.3.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 146)  -->
+  <defs>
+    <style>
+      .st0 {
+        isolation: isolate;
+      }
+
+      .st1 {
+        fill: #fff;
+      }
+
+      .st2 {
+        fill: #f06;
+      }
+    </style>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="19.5" numOctaves="10" result="turbulence"></feTurbulence>
+      <feComposite operator="in" in="turbulence" in2="SourceAlpha" result="composite"></feComposite>
+      <feColorMatrix in="composite" type="luminanceToAlpha"></feColorMatrix>
+      <feBlend in="SourceGraphic" in2="composite" mode="color-burn"></feBlend>
+    </filter>
+    <mask id="shape-mask">
+      <linearGradient id="fade-gradient" gradientTransform="rotate(0)">
+        <stop offset="0%" stop-color="black" stop-opacity="0.6"></stop>
+        <stop offset="65%" stop-color="white" stop-opacity="0.9"></stop>
+        <stop offset="75%" stop-color="white" stop-opacity="1"></stop>
+      </linearGradient>
+      <use href="#circle" fill="url('#fade-gradient')"></use>
+    </mask>
+    <ellipse id="circle" cx="50" cy="50" rx="50" ry="50"></ellipse>
+  </defs>
+  <path class="st2" filter="url('#noise')" d="M607.5,305.6c0,151.1-158.8,307.5-307,307.5S13.5,456.8,13.5,305.6,151.7,7.6,300.5,7.6s307,146.8,307,298Z"/>
+  <g class="st0">
+    <path class="st1" d="M177.8,173.3h-40.8v14.1h-12.5v-14.1c0-6.4,5.1-11.5,11.5-11.5h42v11.5h-.1ZM168.6,187.4c6.4,0,11.5,5.1,11.5,11.5v14.1c0,6.4-5.1,11.5-11.5,11.5h-42.1v-11.5h41v-14.1h-30.5v-11.5h31.6Z"/>
+    <path class="st1" d="M241.1,161.8c6.4,0,11.6,5.2,11.6,11.6v33.7c0,6.5-5.2,11.6-11.6,11.6h-22.4c-6.4,0-11.5-5.1-11.5-11.6h32.9v-33.7h-32.9v33.7h-12.6v-33.7c0-6.4,5.2-11.6,11.6-11.6h34.9ZM194.7,244.3v-19.8h12.6v19.8h-12.6Z"/>
+    <path class="st1" d="M311.5,161.8c6.4,0,11.5,5.1,11.5,11.5v39.7h-12.5v-14.1h-33v14.1h33v11.5h-34c-6.5,0-11.6-5.1-11.6-11.5v-14.1c0-6.4,5.1-11.5,11.6-11.5h34v-14.1h-39.2v-11.5h40.4-.1Z"/>
+    <path class="st1" d="M350.2,212.8h36.1v11.6h-36.1c-7.1,0-12.6-5.5-12.6-12.4v-38.4h12.5v39.2h.1ZM385.9,161.8v11.6h-35.7c0-6.5,5.1-11.6,11.6-11.6h24.2Z"/>
+    <path class="st1" d="M446.2,161.8c6.4,0,11.5,5.1,11.5,11.6v15.5h-.1c-.5,5.8-5.3,10.3-11.3,10.3h-32.8v-11.6h31.6v-14.2h-31.6v14.2c-6.9,0-12.6-5.6-12.6-12.5v-1.7h.1c0-6.5,5.1-11.6,11.5-11.6h33.8ZM400.8,211.8c0-6.9,5.7-12.5,12.6-12.5v13.8h41.9v11.5h-41.9c-8.8,0-12.6-5.6-12.6-12.5h0v-.2Z"/>
+  </g>
+  <g class="st0">
+    <path class="st1" d="M124.4,304.8v-12.1h43.7v12.1h-20.2v48.5h-12.5v-48.5h-11ZM168.1,268.5v12.2h-20.2v9.9c-6.9,0-12.5-5.6-12.5-12.5s4.2-9.4,9.4-9.4h23.2Z"/>
+    <path class="st1" d="M223.1,290.7c6.4,0,11.5,5.1,11.5,11.5v39.7h-12.5v-14.1h-33v14.1h33v11.5h-34c-6.5,0-11.6-5.1-11.6-11.5v-14.1c0-6.4,5.1-11.5,11.6-11.5h34v-14.1h-39.2v-11.5h40.4-.1Z"/>
+    <path class="st1" d="M261.8,341.6h36.1v11.6h-36.1c-7.1,0-12.6-5.5-12.6-12.4v-38.4h12.5v39.2h.1ZM297.4,290.7v11.6h-35.7c0-6.5,5.1-11.6,11.6-11.6h24.2Z"/>
+    <path class="st1" d="M357.8,290.7c6.4,0,11.5,5.1,11.5,11.6v15.5h-.1c-.5,5.8-5.3,10.3-11.3,10.3h-32.8v-11.6h31.6v-14.2h-31.6v14.2c-6.9,0-12.6-5.6-12.6-12.5v-1.7h.1c0-6.5,5.1-11.6,11.5-11.6h33.8ZM312.4,340.6c0-6.9,5.7-12.5,12.6-12.5v13.8h41.9v11.5h-41.9c-8.8,0-12.6-5.6-12.6-12.5h0v-.2Z"/>
+  </g>
+  <g class="st0">
+    <g class="st0">
+      <path class="st1" d="M249.2,457.6v-12.2h13v12.2h-13Z"/>
+      <path class="st1" d="M291.7,406.6v39.6h-12.5v-39.6c0-6.4,5.1-11.6,11.6-11.6h23.4c6.5,0,11.6,5.2,11.6,11.6h-34ZM325.7,406.6h12.5v39.6c0,6.4-5.1,11.5-11.5,11.5h-23.8c-6.4,0-11.5-5.1-11.5-11.5h34v-39.6h.1Z"/>
+      <path class="st1" d="M352.9,457.6v-38.6c0-6.9,5.7-12.5,12.6-12.5v51.1h-12.6ZM365.8,395.1v11.5h29.3v-11.5h-29.3Z"/>
+      <path class="st1" d="M456.2,395.1c6.4,0,11.6,5.1,11.6,11.5v36.3h-12.6v-36.3h-32.9v36.3h32.9c0,6.4-5.1,11.6-11.5,11.6h-22.4c-6.4,0-11.5-5.2-11.5-11.6h-.1v-36.3c0-6.4,5.1-11.5,11.5-11.5h35ZM455.1,465.9v-8.3h12.6v8.3c0,6.4-5.2,11.6-11.6,11.6h-46.3v-11.6h45.3Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<div class="cookie" id="cookieBanner" data-fragment-id="cookieBanner">
+    <p><span class="on-desktop">We care about your privacy.</span> No tracking, no cookies. Learn more: <a href="./content/legal/privacy-and-gdpr.html">Privacy & GDP</a>.</p><button id="closeBanner">Got it</button>
+</div>
+<style>
+#cookieBanner {
+  position: sticky;
+  bottom: 1rem;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  min-width: 35%;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  background-color: white;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+  border-radius: 1rem;
+}
+#cookieBanner button {
+  color: black;
+  text-transform: uppercase;
+  border: none;
+  padding: .5rem 12rem .5rem 3rem;
+  cursor: pointer;
+  border-radius: 999px;
+  min-width: fit-content;
+  background: linear-gradient(to right, #c2c1b2, #cecfc6);
+}
+#cookieBanner button:hover {
+  color: white;
+  background: rgb(8, 8, 8);
+}
+</style>

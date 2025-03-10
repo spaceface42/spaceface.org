@@ -1,0 +1,422 @@
+/**
+ * VARIABLES
+ */
+:root {
+
+  /* spaceing units */
+  --quark:   0.25rem;     /* very tiniest */
+  --neutrino: 0.5rem;     /* tiniest */
+  --atom:       1rem;     /* base */
+  --molecule:   3rem;     /* big */
+
+  --margin:  var(--neutrino);
+  --padding: var(--atom);
+  --gap:     var(--molecule);
+
+  /* named colors */
+  --platinum: rgba(224, 225, 221, .5);
+  --timberwolf: rgba(211, 213, 212, 1);
+  --stategray: rgba(135, 142, 153, 1);
+
+
+  
+  --blue-gray-1: rgba(19, 24, 38, .9);
+  --blue-gray-2: rgba(26, 31, 48, .9);
+  --blue-gray-3: rgba(52, 61, 89, .9);
+
+
+
+  --darkgray: rgb(65, 64, 66);
+
+  --color-primary: white;
+  --color-accent: rgba(241,68,41,0.9);
+  --color-accent-2: rgba(185,155,115,0.9);
+  --color-secondary: rgb(147, 163, 146);
+  --color-neutral: rgb(216, 216, 216);
+  --spaceface-gradient: linear-gradient(to right, #6253e1, #a853e1);
+}
+
+/* dark and light */
+/* light */
+:root {
+  --clr-light: var(--platinum);
+  --clr-dark: var(--stategray);
+  --text-color: var(--blue-gray-3);
+  --background: var(--clr-light);
+}
+
+/* dark */
+:root[style*="--dark-mode: 1"] {
+  --text-color: var(--clr-light);
+  --background: var(--clr-dark);
+}
+
+
+
+/**
+ * behavior
+ */
+html {
+  scroll-padding-top: 4rem;
+}
+::selection {
+  background: rgba(255, 136, 0, 0.4);
+}
+
+/**
+ * atomic tags and helper classes
+ */
+.nav {
+  list-style: none;
+}
+.icon {
+  height: 2rem;
+  display: inline;
+}
+p {
+  overflow-wrap: break-word; /* Ensures long words wrap */
+  word-break: break-word; /* Alternative wrapping method */
+  white-space: normal; /* Prevents text from staying in one line */
+  text-wrap: wrap;
+}
+
+/**
+ * SIZES
+ */
+.logo {
+  max-width: 8vw;
+  min-width: 6rem;
+}
+
+/**
+ * FLEX LAYOUT
+ * this is only the main layout,
+ * how the items behave, how much space they take on the screen
+ */
+body {
+  display: flex;
+  flex-direction: row;
+	flex-wrap: wrap;
+  gap: var(--gap);
+}
+header {
+  flex: 1 0 10%;
+  min-width: fit-content;
+}
+nav {
+  align-self: flex-start;
+  width: fit-content;
+}
+main {
+  flex: 1 1 70%;
+  min-width: 600px;
+}
+footer {
+  flex: 100%;           /* against parent / body / 100% width, do not shrink or growth */
+  min-width: 100%;      /* self */
+  display: inherit;     /* against children */
+  flex-wrap: wrap;
+}
+
+/**
+ * LAYOUT
+ * here we declare how the internal space of the tags behave
+ * position, padding, margin
+ */
+body, header, main, footer {
+  padding: var(--molecule);
+}
+header {
+  /* padding: var(--molecule); */
+}
+h1 {
+  position: fixed;
+  top: 12%;
+  left: var(--molecule);
+  transform: rotate(-90deg) translateX(-50%);
+  transform-origin: bottom left;
+}
+h1 a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/**
+ * sitewide menu
+ */
+nav {
+  display: flex;
+  flex-direction: column;
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 20%;
+  gap: var(--molecule);
+}
+
+ul {
+
+}
+li {
+}
+
+nav a {
+  color: var(--text-color);
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  border-radius: var(--neutrino);
+  transition: none;
+}
+nav a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+#contact {
+
+}
+.question {
+  margin-top: 3.5rem;
+}
+.answer {
+}
+#contact .cta {
+  margin-top: var(--quark);
+}
+
+.ux {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+}
+.logo {
+  position: absolute;
+  z-index: -1;
+  left: 8%;
+  bottom: 14%;
+  width: 3rem;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+#logo-spaceface {
+  position: fixed;
+  width: 70px;
+  left: 3rem;
+  top: 3rem;
+
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atom);
+}
+
+section, article {
+  gap: 0;
+  min-height: 25vh;
+}
+
+footer {
+  /* padding: var(--molecule); */
+  margin-top: 3rem;
+  background-color:rgba(224, 225, 221, .8);
+  gap: 8rem;
+  border-radius: var(--atom);
+}
+/* .about .links internal, .contact .links external, .copyright */
+footer div {
+  display: inherit;
+  flex-direction: column;
+  gap: var(--atom);
+}
+.copyright {
+  display: block;
+  max-width: 100%;
+  width: 100%
+}
+footer h2 {
+  font-size: 1rem;
+}
+footer p {
+  max-width: 82ch;
+}
+footer .logos {
+}
+footer .icon {
+  height: 4rem;
+  display: inline;
+  width: auto;
+  margin: 2rem;
+  filter: grayscale(1);
+  mix-blend-mode: multiply;
+}
+
+
+
+
+
+
+
+
+
+
+/* tipo */
+html {
+  font-size: 12px;
+}
+
+@font-face {
+  font-family: 'Arrival';
+  src: url('./fonts/ArrivalApercuMonoPro-Regular.woff2') format('woff2');
+}
+
+body {
+  font-family: "Arrival", monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  line-height: 2rem;
+  text-transform: uppercase;
+  text-underline-offset: var(--neutrino);
+
+  color: var(--text-color);
+  background-color: var(--background);
+}
+
+/* layered backgrounds */
+body {
+  background-image: 
+    url('./marks.svg'),
+    url('./diagonal.svg'),
+    url('./spaceface-text.svg'),
+    url('./spaceface-s.svg');
+    background-attachment:
+      fixed,
+      fixed,
+      scroll,
+      fixed;
+    background-size:
+      70%,
+      contain,
+      30%,
+      60%;
+    background-repeat:
+      repeat,
+      no-repeat,
+      no-repeat,
+      no-repeat;
+      background-position: 
+      3rem,
+      center,
+      left top,
+      50%;
+}
+
+
+
+
+
+
+
+
+
+/*
+section {
+  animation: autoBlurAnimation linear both;
+  animation-timeline: view(50%);
+}
+
+@keyframes autoBlurAnimation {
+  0% {
+    filter: blur(20px);
+  }
+  20% {
+    filter: blur(0px);
+  }
+
+  80% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(20px);
+  }
+}
+  */
+
+/**
+ * CTA BUTTON
+ */
+.cta {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+
+  width: 50%;
+  min-width: fit-content;
+  /* padding: var(--quark) var(--molecule); */
+  padding-top: var(--quark);
+  padding-left: var(--atom);
+
+
+  color: #FFFFFF;
+  background: #5E5DF0;
+  border-radius: 999px;
+  
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  text-decoration: none;
+
+  line-height: 1.5rem;
+}
+.cta-primary {
+  background-image: var(--spaceface-gradient);
+}
+.cta-secondary_o {
+  background-image: linear-gradient(to right, #e1cc53, #dfe153);
+}
+.cta-secondary {
+  border: solid #333333 1px;
+  color: #333333;
+  background: none;
+}
+.cta:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+/* override cta button in nav */
+header .cta-primary {
+  width: 22rem;
+  background: linear-gradient(to right, var(--color-accent), rgba(241,68,41,0.7));;
+}
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+
+  :root {
+    --molecule:   1rem;     /* big spacing unit */
+    --spaceface-gradient: linear-gradient(to right, #b2e153, #8ee153);
+    --clr-dark: rgb(12, 12, 12);
+  }
+
+}
+
+/* hide noncrucial content for mobile */
+@media (max-width: 660px) {
+  .on-desktop {
+      display: none;
+  }
+}

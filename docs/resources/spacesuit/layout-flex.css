@@ -1,0 +1,26 @@
+/**
+ * flex layout
+ */
+
+ body {
+    display: flex;
+    flex-direction: row;
+      flex-wrap: wrap;
+    gap: var(--gap);
+  }
+  header {
+    flex: 1 0 10%;
+    width: 20vw;
+    min-width: fit-content;
+  }
+  nav {
+    position: -webkit-sticky; /* for Safari */
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: auto;
+    padding: var(--molecule);
+  }
+  main {
+    flex: 1 1 50%;
+  }

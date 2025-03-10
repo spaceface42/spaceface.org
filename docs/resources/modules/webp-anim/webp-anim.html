@@ -1,0 +1,26 @@
+<style>
+.animation-container {
+    position: relative;
+    width: 300px;
+    /* height: fit-content; */
+}
+.animation-container img {
+    max-width: 100%;
+    display: block;
+}
+.static-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background-color: white;
+}
+.animation-container:hover .static-image {
+    opacity: 1;
+}
+</style>
+<div class="animation-container">
+    <img class="animation" src="../resources/modules/slideshow/mov-loop-slow.webp" alt="Animation">
+    <img class="static-image" src="../resources/modules/slideshow/static.webp" alt="Static frame">
+</div>

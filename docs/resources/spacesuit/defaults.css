@@ -1,0 +1,76 @@
+/**
+ * spacesuit defaults
+ */
+ 
+*,
+*::before,
+*::after{
+  margin:0;
+  padding:0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+/**
+  * 1. Correct the line height in all browsers.
+  * 2. Prevent adjustments of font size after orientation changes in iOS.
+  * Enable smooth scrolling on the whole document
+  * and Disable smooth scrolling when users have prefers-reduced-motion enabled
+  */
+  html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    min-height: 100vh; /* fallback */
+    min-height: 100dvh; /* dynamic viewport height */
+    min-height: 100svh; /* small viewport height */
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+
+/**
+  * utils
+  * img / responsive images
+  */
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  /* for lazy loading / the low res pic placeholder */
+  /* background: no-repeat; */
+  /* background-size: cover; */
+  /* vertical-align: middle; */
+  /* font-style: italic; */
+}
+
+/* Right now, SVGs, images, and videos are block elements, but inline images (like icons) might be affected.
+Consider adding vertical-align: middle to svg for better inline handling. */
+svg {
+  vertical-align: middle; /* for better inline handling */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p, li, figcaption {
+  text-wrap: pretty;
+}

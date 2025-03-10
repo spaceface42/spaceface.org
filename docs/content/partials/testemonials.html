@@ -1,0 +1,40 @@
+<section class="testemonials">
+<h2>testemonials</h2>
+  <article>
+    <h3>title</h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas?</p>
+    <img src="./content/gorilla.webp" alt="" />
+  </article>
+  <article>
+    <h3>title</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam rem vero modi.</p>
+    <img src="./content/fox.webp" alt="" />
+  </article>
+  <article>
+    <h3>title</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque culpa rerum suscipit. Soluta quas laboriosam atque.</p>
+    <img class="overlay" src="./content/bear.webp" alt="" />
+  </article>
+</section>
+<style>
+  .testemonials h2 {
+    width: 100%;
+  }
+.testemonials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: space-between;
+}
+.testemonials > article {
+  width: 30%;
+  min-width: 300px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 1rem;
+  padding: var(--atom);
+  gap: 3rem;
+}
+</style>

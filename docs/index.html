@@ -2,125 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>spaceface graphic design</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes" />
+    <title>spaceface</title>
+    <meta name="description" content="Explore the creative world of Zsolt Sandor, a graphic designer with over 20 years of experience. SpaceFace.org is where unique, unconventional ideas meet clarity and thoughtful design. Discover innovative visual concepts and design solutions.">
+    <meta name="keywords" content="graphic designer, portfolio, Zsolt Sandor, creative design, unique graphics, visual design, unconventional ideas, design solutions, SpaceFace.org" />
+    <meta name="author" content="Zsolt Sandor" />
+    <meta property="og:title" content="Zsolt Sandor | Graphic Designer Portfolio" />
+    <meta property="og:description" content="SpaceFace.org showcases the design journey of Zsolt Sandor, blending creativity with clarity. Explore over 20 years of innovative work in graphic design." />
+    <meta property="og:image" content="content/spaceface-og.jpg" />
+    <meta property="og:url" content="https://spaceface.org" />
+    <link rel="icon" href="./resources/spacesuit/favicon.ico" type="image/x-icon" />
+    <!--
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-abcdef123456...'; object-src 'none'; base-uri 'none';" />
+    -->
+    <link rel="stylesheet" rel="preload" href="./resources/spacesuit/defaults.css" />
+    <link rel="stylesheet" rel="preload" href="./resources/spacesuit/spacesuit.css" />
+    <link rel="stylesheet" rel="preload" href="./resources/spacesuit/debug/debug.css" />
 
-    <!-- <link rel="html" href="./partials/_head.html" /> -->
-
-    <link rel="stylesheet" href="./skin/css/defaults.css" />
-    <link rel="stylesheet" href="./skin/css/layout.css" />
-    
-    <!-- app js -->
-    <script type="module" src="./rsrc/app/app.js"></script>
+    <!-- app js as module. gets interpreted as it was at the end of the document -->
+    <script type="module" src="./resources/__app-overkill.js"></script>
 </head>
 <body>
 
-
-
 <!-- header -->
 <header>
-    <link rel="html" href="./partials/_navigation.html" />
+    <h1><a href="#">spaceface</a></h1>
+    <link rel="include" href="./resources/partials/_nav.html" />
+    <img class="logo" src="./resources/spacesuit/logo-sandorzsolt-620.svg" alt="Spaceface logo and website design by Zsolt Sandor" />
+    <img id="logo-spaceface" src="./resources/spacesuit/sp-620.svg" alt="Spaceface logo" />
 </header>
 <!-- / header -->
 
-
-
-<!-- logo -->
-<div id="logoholder">
-    <object id="logo" type="image/svg+xml" data="./skin/sandorzsolt.svg">
-        <img src="./skin/sandorzsolt.png" alt="" />
-    </object>
-</div>
-<!-- / logo -->
-
-
-
-<!-- <link rel="html" href="./partials/fixed-position.html" /> -->
-
-
-
 <!-- main -->
 <main>
-    <button id="btn_tags">btn_tags</button>
-
-    <link rel="html" href="./partials/_cover.html" />
-
-    <link rel="html" href="./partials/todo.html" />
-
-    <link rel="html" href="./partials/one.html" />
-    <link rel="html" href="./partials/two.html" />
-    <link rel="html" href="./partials/three.html" />
-    <link rel="html" href="./partials/partial-3.html" />
-
-    <!-- <link rel="html" href="./partials/partial-whole.html" /> -->
-
-    <link rel="html" href="./partials/partial.html" />
-    <link rel="html" href="./partials/partial-2.html" />
-    <link rel="html" href="./partials/partial-3.html" />
-    <link rel="html" href="./partials/partial-2.html" />
-    <link rel="html" href="./partials/partial.html" />
-
-
-
-
-
+    <link rel="include" href="./content/partials/_main.html" />
 </main>
 <!-- / main -->
 
-
-
-
-
-
-
-
 <!-- footer -->
-<footer id="contact">
-    <link rel="html" href="./partials/_footer.html" />
-    <div class="partial-from-subdomain">
-        <style>
-            .partial-from-subdomain {
-                width: 50vw;
-                height: 50vh;
-                background-color: rgba(255, 0, 255, 0.163);
-                display: block;
-                margin: 12rem 0 12rem 0;
-                position: relative;
-                color: white;
-            }
-            .partial-from-subdomain code pre {
-                display: block;
-                color: magenta;
-                z-index: 44;
-            }
-        </style>
-        <!--  
-        <link rel="html" href="https://spaceface42.github.io/_partials/spaceface/test.html" />
-        -->
-        <link rel="html" href="https://blog.spaceface.org/mavigare-necesse-est" />
-    </div>
+<footer>
+    <link rel="include" href="./resources/partials/_footer.html" />
 </footer>
 <!-- / footer -->
 
-
-
-<!-- debug -->
-<!-- 
-<link rel="stylesheet" href="./skin/debug/debug.css" />
-<script src="./skin/debug/debug.js"></script>
- -->
-<!-- / debug -->
-
-
-
-<script>
-
-console.log('html page loaded');
-
-</script>
-<!-- / debug -->
-
-
+<!-- cookie-banner -->
+    <link rel="include" href="./resources/modules/cookiebanner/_cookiebanner.html" />
+<!-- / cookie-banner -->
 
 </body>
 </html>

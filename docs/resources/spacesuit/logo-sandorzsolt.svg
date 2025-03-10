@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+<style>
+#logo {
+    transform: translate(70px, 70px);
+}
+.logo {
+    fill: none;
+    stroke: tomato;
+    stroke-width: 1;
+    stroke-linecap: round;
+}
+.guide {
+    fill: none;
+    stroke: blue;
+    stroke-width: .1;
+}        
+path {
+    fill: none;
+    stroke: #9e9eb6;
+    stroke-width: 1;
+}
+</style>
+
+<!-- Guides for reference -->
+<rect width="300" height="300" fill="lightgray" />
+<rect class="guide" id="guide-only-2" x="70" y="70" width="160" height="160" />
+
+<g id="logo">
+    <!--<circle class="guide" cx="80" cy="80" r="140" />-->
+    <rect class="guide" x="-30" y="-30" width="220" height="220" rx="30" ry="30" />
+    <path class="logo" d="
+        M 0 160 
+        H 140 
+        a 20 20 0 0 0 0 -40 
+        H 20 
+        a 20 20 0 0 1 0 -40 
+        H 140 
+        a 20 20 0 0 0 0 -40 
+        H 20 
+        a 20 20 0 0 1 0 -40 
+        H 160" />
+</g>
+</svg>
