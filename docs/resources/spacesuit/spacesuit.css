@@ -419,4 +419,14 @@ header .cta-primary {
   .on-desktop {
       display: none;
   }
+
+  body {
+    background-image: 
+      url('./diagonal.svg');
+      background-attachment: fixed;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
 }
